@@ -42,21 +42,36 @@ function Search() {
                     <CiSearch />
                 </button>
             </form>
+
+
+
             <div className='filter'>
-                <IoFilter />
-                <p>Filtrar por:</p>
-                <select defaultValue="all" onChange={(e) => {searchByType(e.target.value)}}>
-                    <option value="all" disabled>Tipo</option>
-                    {types && types.length > 0 ? types.map((item) => (
-                        <option key={item} value={item}>{item}</option>
-                    )) : ""}
-                </select>
-                <select defaultValue="all" onChange={(e) => {searchByRarity(e.target.value)}}>
-                    <option value="all" disabled>Raridade</option>
-                    {rarities && rarities.length > 0 ? rarities.map((item) => (
-                        <option key={item} value={item}>{item}</option>
-                    )) : ""}
-                </select>
+                {/* <IoFilter />
+                <p>Filtrar por:</p> */}
+
+                <div className='compare'>
+                    <p>Comparar cartas</p>
+                </div>
+
+                <div className='selectFilter'>
+                    <span>Tipo:</span>
+                    <select defaultValue="all" onChange={(e) => {searchByType(e.target.value)}}>
+                        <option value="all" disabled>Todos</option>
+                        {types && types.length > 0 ? types.map((item) => (
+                            <option key={item} value={item}>{item}</option>
+                        )) : ""}
+                    </select>
+                </div>
+
+                <div className='selectFilter'>
+                    <span>Raridade:</span>
+                    <select defaultValue="all" onChange={(e) => {searchByRarity(e.target.value)}}>
+                        <option value="all" disabled>Todos</option>
+                        {rarities && rarities.length > 0 ? rarities.map((item) => (
+                            <option key={item} value={item}>{item}</option>
+                        )) : ""}
+                    </select>
+                </div>
             </div>
         </div>
     </div>
