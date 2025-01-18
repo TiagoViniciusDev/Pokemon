@@ -9,6 +9,8 @@ interface Filter {
   page: number;
   pageSize: number;
   q: string;
+  type: string;
+  rarity: string;
 }
 
 interface Error {
@@ -50,7 +52,9 @@ export const PokemonTCGProvider: React.FC<PokemonTCGProviderProps> = ({ children
   const [filter, setFilter] = useState<Filter>({
     page: 1,
     pageSize: 5,
-    q: ''
+    q: '',
+    type: 'all',
+    rarity: 'all',
   });
 
   const [types, setTypes] = useState<Array<string>>([])

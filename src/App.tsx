@@ -12,7 +12,9 @@ import { PokemonTCGContext } from './context/PokemonTCGContext'
 
 function App() {
 
-  const { loading, setLoading, setError, data, setData, filter, setTypes } = useContext(PokemonTCGContext)
+  const { setLoading, setError, setData, filter, setTypes, setRarities } = useContext(PokemonTCGContext)
+
+  console.log(filter)
 
   const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -84,17 +86,59 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    let Query = `pageSize=${filter.pageSize}&page=${filter.page}`
-    if(filter.q !== ''){
-      Query = `pageSize=${filter.pageSize}&page=${filter.page}&q=name:${filter.q}*`
+  async function getAllRarities(){
+    try {
+      const response = await fetch("https://api.pokemontcg.io/v2/rarities", {
+        headers: {
+          "X-Api-Key": API_KEY,
+        },
+      })
+
+      if(!response.ok){
+        throw new Error("Erro ao buscar raridades")
+      }
+
+      const resultObj = await response.json()
+
+      if(resultObj.data.length < 1){
+        throw new Error("Erro, o array de raridades está vazio")
+      }
+
+      setRarities(resultObj.data)
+    } catch (error) {
+      setError({
+        value: true,
+        message: error.message
+      })
     }
+  }
+
+  useEffect(() => {
+    let Query = `pageSize=${filter.pageSize}&page=${filter.page}&q=name:${filter.q}* types:${filter.type} rarity:"${filter.rarity}"`
+
+    if(filter.q == ''){
+      Query = Query.replace(/name:[^ ]*\s?/, ""); //Remove o name:${filter.q}"
+    }
+
+    if(filter.type == 'all'){
+      Query = Query.replace(/types:[^ ]*\s?/, ""); //Remove o types:${filter.type}
+    }
+
+    if(filter.rarity == 'all'){
+      Query = Query.replace(/rarity:"[^"]*"\s?/, ""); //Remove o rarity:"${filter.rarity}"
+    }
+
+    if(filter.q == "" && filter.type == 'all' && filter.rarity == 'all'){
+      Query = Query.replace(/&/, ""); //Remove o &
+    }
+
     console.log(Query)
     getAllPokemons(Query)
   },[filter])
 
   useEffect(() => {
     getAllTypes()
+    getAllRarities()
   },[])
 
   return (

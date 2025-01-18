@@ -8,7 +8,7 @@ import { PokemonTCGContext } from '../../context/PokemonTCGContext.tsx';
 
 function Search() {
 
-  const { setFilter, types } = useContext(PokemonTCGContext)
+  const { setFilter, types, rarities } = useContext(PokemonTCGContext)
   const [search, setSearch] = useState<string>('')
 
   function searchByName(e){
@@ -19,7 +19,19 @@ function Search() {
       }))
   }
 
-  console.log(types)
+  function searchByType(cardType){
+    setFilter((prevFilter) => ({
+        ...prevFilter, // mantém os outros valores
+        type: cardType 
+      }))
+  }
+
+  function searchByRarity(cardRarity){
+    setFilter((prevFilter) => ({
+        ...prevFilter, // mantém os outros valores
+        rarity: cardRarity
+      }))
+  }
 
   return (
     <div className='Search'>
@@ -33,9 +45,15 @@ function Search() {
             <div className='filter'>
                 <IoFilter />
                 <p>Filtrar por:</p>
-                <select>
-                    <option>Tipo</option>
+                <select defaultValue="all" onChange={(e) => {searchByType(e.target.value)}}>
+                    <option value="all" disabled>Tipo</option>
                     {types && types.length > 0 ? types.map((item) => (
+                        <option key={item} value={item}>{item}</option>
+                    )) : ""}
+                </select>
+                <select defaultValue="all" onChange={(e) => {searchByRarity(e.target.value)}}>
+                    <option value="all" disabled>Raridade</option>
+                    {rarities && rarities.length > 0 ? rarities.map((item) => (
                         <option key={item} value={item}>{item}</option>
                     )) : ""}
                 </select>
