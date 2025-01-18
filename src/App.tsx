@@ -16,11 +16,11 @@ function App() {
 
   const API_KEY = import.meta.env.VITE_API_KEY;
 
-  async function getAllPokemons(filter){
+  async function getAllPokemons(query:string){
     setLoading(true)
 
     try {
-      const Query = `https://api.pokemontcg.io/v2/cards?${filter}`
+      const Query = `https://api.pokemontcg.io/v2/cards?${query}`
 
       const response = await fetch(Query, {
         headers: {
@@ -68,6 +68,14 @@ function App() {
       if(!response.ok){
         throw new Error("Erro ao buscar tipos")
       }
+
+      const resultObj = await response.json()
+
+      if(resultObj.data.length < 1){
+        throw new Error("Erro, o array de tipos está vazio")
+      }
+
+      setTypes(resultObj.data)
     } catch (error) {
       setError({
         value: true,

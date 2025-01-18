@@ -8,7 +8,7 @@ import { PokemonTCGContext } from '../../context/PokemonTCGContext.tsx';
 
 function Search() {
 
-  const { setFilter } = useContext(PokemonTCGContext)
+  const { setFilter, types } = useContext(PokemonTCGContext)
   const [search, setSearch] = useState<string>('')
 
   function searchByName(e){
@@ -18,6 +18,8 @@ function Search() {
         q: search //inseri o texto na pesquisa
       }))
   }
+
+  console.log(types)
 
   return (
     <div className='Search'>
@@ -33,6 +35,9 @@ function Search() {
                 <p>Filtrar por:</p>
                 <select>
                     <option>Tipo</option>
+                    {types && types.length > 0 ? types.map((item) => (
+                        <option key={item} value={item}>{item}</option>
+                    )) : ""}
                 </select>
             </div>
         </div>

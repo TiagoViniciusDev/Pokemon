@@ -44,6 +44,11 @@
     gap: 0.5em;
 }
 
+.Search > .container .filter select{
+    padding: 0 1em;
+    height: 3em;
+}
+
 .Search > .container .filter svg{
     color: #AFAFB0;
 }

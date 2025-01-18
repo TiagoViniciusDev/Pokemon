@@ -27,6 +27,8 @@ interface PokemonTCGContextProps {
   setError: React.Dispatch<React.SetStateAction<Error>>;
   types: Array<string>;
   setTypes: React.Dispatch<React.SetStateAction<Array<string>>>;
+  rarities: Array<string>;
+  setRarities: React.Dispatch<React.SetStateAction<Array<string>>>;
 }
 
 export const PokemonTCGContext = createContext<PokemonTCGContextProps | undefined>(undefined);
@@ -53,6 +55,8 @@ export const PokemonTCGProvider: React.FC<PokemonTCGProviderProps> = ({ children
 
   const [types, setTypes] = useState<Array<string>>([])
 
+  const [rarities, setRarities] = useState<Array<string>>([])
+
   const values: PokemonTCGContextProps = {
     data,
     setData,
@@ -63,7 +67,9 @@ export const PokemonTCGProvider: React.FC<PokemonTCGProviderProps> = ({ children
     error, 
     setError,
     types, 
-    setTypes
+    setTypes,
+    rarities, 
+    setRarities
   };
 
   return (
