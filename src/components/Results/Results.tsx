@@ -1,6 +1,7 @@
 import './Results.css'
 import PokemonContainer from '../PokemonContainer/PokemonContainer'
 import Loading from '../Loading/Loading.tsx';
+import Error from '../Error/Error.tsx';
 
 //Context
 import { useContext } from 'react';
@@ -8,7 +9,7 @@ import { PokemonTCGContext } from '../../context/PokemonTCGContext.tsx';
 
 function Results() {
 
-  const { loading, data } = useContext(PokemonTCGContext)
+  const { loading, data, error } = useContext(PokemonTCGContext)
 
   return (
     <main className='Results'>
@@ -18,9 +19,9 @@ function Results() {
                 <p>{data && !loading ? `Total de ${data.totalCount} Pokémons` : 'Pokémons'}</p> 
             </header>
             <div className='searchResults'>
-                {data && !loading ? data.data.map((item) => (
+                {data && data.data.length > 0 && !loading && !error.value ? data.data.map((item) => (
                     <PokemonContainer key={item.id} data={item}/>
-                )) : (<Loading />)}
+                )) : error.value ? <Error /> : (<Loading />)}
             </div>
         </div>
     </main>

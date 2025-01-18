@@ -8,6 +8,12 @@ interface Data {
 interface Filter {
   page: number;
   pageSize: number;
+  q: string;
+}
+
+interface Error {
+  value: boolean;
+  menssage: string;
 }
 
 interface PokemonTCGContextProps {
@@ -17,6 +23,10 @@ interface PokemonTCGContextProps {
   setFilter: React.Dispatch<React.SetStateAction<Filter>>;
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  error: Error;
+  setError: React.Dispatch<React.SetStateAction<Error>>;
+  types: Array<string>;
+  setTypes: React.Dispatch<React.SetStateAction<Array<string>>>;
 }
 
 export const PokemonTCGContext = createContext<PokemonTCGContextProps | undefined>(undefined);
@@ -28,12 +38,20 @@ interface PokemonTCGProviderProps {
 export const PokemonTCGProvider: React.FC<PokemonTCGProviderProps> = ({ children }) => {
   const [loading, setLoading] = useState<boolean>(false)
 
+  const [error, setError] = useState<Error>({
+    value: false,
+    menssage: '',
+  })
+
   const [data, setData] = useState<Data | undefined>();
 
   const [filter, setFilter] = useState<Filter>({
     page: 1,
-    pageSize: 5
+    pageSize: 5,
+    q: ''
   });
+
+  const [types, setTypes] = useState<Array<string>>([])
 
   const values: PokemonTCGContextProps = {
     data,
@@ -41,7 +59,11 @@ export const PokemonTCGProvider: React.FC<PokemonTCGProviderProps> = ({ children
     filter, 
     setFilter,
     loading, 
-    setLoading
+    setLoading,
+    error, 
+    setError,
+    types, 
+    setTypes
   };
 
   return (
