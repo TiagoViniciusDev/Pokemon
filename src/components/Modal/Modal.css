@@ -1,0 +1,158 @@
+.Modal{
+    width: 90%;
+    height: 90%;
+    z-index: 999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FDFDFD;
+
+    display: flex;
+    gap: 2em;
+    justify-content: space-between;
+    padding: 2em;
+    padding-right: 0;
+
+    border: 1px solid black;
+    border-radius: 0.5em;
+}
+
+.Modal .close{
+    display: flex;
+    align-items: center;
+    background-color: #D4D7DE;
+    border: 1px solid black;
+    border-radius: 0.3em;
+    cursor: pointer;
+    
+}
+
+.Modal .close svg{
+    font-size: 2em;
+}
+
+.Modal > img{
+    height: 100%;
+}
+
+.Modal .info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding-right: 1em;
+
+    overflow-y: auto;
+}
+
+.Modal .info header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+
+    padding-bottom: 0.5em;
+
+    border-bottom: 1px solid black;
+}
+
+.Modal .info header div:nth-of-type(2){
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.Modal .info .title{
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    font-size: 1.2em;
+}
+
+.Modal .info .skills .skillHeader{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.Modal .info .skills .skillHeader p{
+    font-weight: 500;
+}
+
+.Modal .info .skills .skillHeader p:first-of-type{
+    background-color: #D4D7DE;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    font-weight: 500;
+}
+
+.Modal .info .skills .skill{
+    margin-bottom: 1em;
+}
+
+.Modal .info .attacks{
+    padding-top: 1em;
+    border-top: 1px solid black;
+}
+
+.Modal .info .attacks .attackHeader{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 0.5em;
+    justify-content: space-between;
+}
+
+.Modal .info .attacks .attackHeader p{
+    font-weight: 500;
+}
+
+.Modal .info .attributes{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 2em;
+    margin: 1em 0;
+    align-items: top;
+}
+
+.Modal .info .attributes .item > p{
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+
+.Modal .info .attributes .item .itemInfo{
+    display: flex;
+    gap: 1em;
+}
+
+.Modal .info .attributes .set .itemInfo{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.Modal .info .attributes .set .itemInfo img{
+    width: 1.5em;
+}
+
+.Modal .info .markets{
+    padding-top: 1em;
+    border-top: 1px solid black;
+}
+
+.Modal .info .markets .marketOptions{
+    display: flex;
+    gap: 4em;
+}
+
+.Modal .info .markets .marketOptions .market a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    display: block;
+}

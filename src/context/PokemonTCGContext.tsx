@@ -18,6 +18,11 @@ interface Error {
   menssage: string;
 }
 
+interface ModalData {
+  id: String;
+  name: string;
+}
+
 interface PokemonTCGContextProps {
   data: Data | undefined;
   setData: React.Dispatch<React.SetStateAction<Data | undefined>>;
@@ -31,6 +36,8 @@ interface PokemonTCGContextProps {
   setTypes: React.Dispatch<React.SetStateAction<Array<string>>>;
   rarities: Array<string>;
   setRarities: React.Dispatch<React.SetStateAction<Array<string>>>;
+  modalData: ModalData | undefined;
+  setModalData: React.Dispatch<React.SetStateAction<ModalData | undefined>>;
 }
 
 export const PokemonTCGContext = createContext<PokemonTCGContextProps | undefined>(undefined);
@@ -61,6 +68,8 @@ export const PokemonTCGProvider: React.FC<PokemonTCGProviderProps> = ({ children
 
   const [rarities, setRarities] = useState<Array<string>>([])
 
+  const [modalData, setModalData] = useState<ModalData | undefined>();
+
   const values: PokemonTCGContextProps = {
     data,
     setData,
@@ -73,7 +82,9 @@ export const PokemonTCGProvider: React.FC<PokemonTCGProviderProps> = ({ children
     types, 
     setTypes,
     rarities, 
-    setRarities
+    setRarities,
+    modalData, 
+    setModalData
   };
 
   return (

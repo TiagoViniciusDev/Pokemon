@@ -1,9 +1,15 @@
 import './PokemonContainer.css'
 
-function PokemonContainer({data}) { 
+//Context
+import { useContext } from 'react';
+import { PokemonTCGContext } from '../../context/PokemonTCGContext.tsx';
+
+function PokemonContainer({data}) {
+
+  const { setModalData } = useContext(PokemonTCGContext)
 
   return (
-    <div className='PokemonContainer'>
+    <div className='PokemonContainer' onClick={() => {setModalData(data)}}>
         <img src={data.images.large} alt={data.name} /> 
         <div className='info'>
             <div>

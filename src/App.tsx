@@ -3,6 +3,7 @@ import Header from './components/Header/Header'
 import Search from './components/Search/Search'
 import Results from './components/Results/Results'
 import Navigation from './components/Navigation/Navigation'
+import Modal from './components/Modal/Modal'
 
 import { useEffect } from 'react'
 
@@ -14,7 +15,7 @@ function App() {
 
   const { setLoading, setError, setData, filter, setTypes, setRarities } = useContext(PokemonTCGContext)
 
-  console.log(filter)
+  // console.log(filter)
 
   const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -145,6 +146,7 @@ function App() {
     <div>
       <Header />
       <Search />
+      <Modal />
       <Results />
       <Navigation />
     </div>

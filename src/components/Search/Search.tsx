@@ -56,7 +56,7 @@ function Search() {
                 <div className='selectFilter'>
                     <span>Tipo:</span>
                     <select defaultValue="all" onChange={(e) => {searchByType(e.target.value)}}>
-                        <option value="all" disabled>Todos</option>
+                        <option value="all">Todos</option>
                         {types && types.length > 0 ? types.map((item) => (
                             <option key={item} value={item}>{item}</option>
                         )) : ""}
@@ -66,7 +66,7 @@ function Search() {
                 <div className='selectFilter'>
                     <span>Raridade:</span>
                     <select defaultValue="all" onChange={(e) => {searchByRarity(e.target.value)}}>
-                        <option value="all" disabled>Todos</option>
+                        <option value="all">Todos</option>  
                         {rarities && rarities.length > 0 ? rarities.map((item) => (
                             <option key={item} value={item}>{item}</option>
                         )) : ""}

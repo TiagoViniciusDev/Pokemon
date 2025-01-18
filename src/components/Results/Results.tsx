@@ -20,7 +20,7 @@ function Results() {
             </header>
             <div className='searchResults'>
                 {data && data.data.length > 0 && !loading && !error.value ? data.data.map((item) => (
-                    <PokemonContainer key={item.id} data={item}/>
+                    <PokemonContainer key={item.id} data={item} />
                 )) : error.value ? <Error /> : (<Loading />)}
             </div>
         </div>
