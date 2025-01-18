@@ -1,0 +1,38 @@
+.PokemonContainer{
+    width: fit-content;
+
+    border-radius: 12px;
+    box-shadow: 0px 1px 4px 0px #89838370;
+    cursor: pointer;
+}
+
+.PokemonContainer:hover{
+    box-shadow: 0px 1px 4px 0px black;
+}
+
+.PokemonContainer img{ /*REMOVER*/
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+}
+
+.PokemonContainer .info{
+    display: flex;
+    gap: 0.5em;
+    justify-content: space-between;
+}
+
+.PokemonContainer .info > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em;
+    gap: 0.5em;
+}
+
+.PokemonContainer .info > div:nth-of-type(2){
+    align-items: center;
+}
+
+.PokemonContainer .info > div img{
+    width: 2em;
+}

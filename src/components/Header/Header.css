@@ -1,0 +1,19 @@
+.Header{
+    box-shadow: 0px 4px 4px 0px #00000040;
+    padding: 1.5em 0;
+}
+
+.Header > .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Header > .container img{
+    width: 120px;
+}
+
+.Header > .container a{
+    text-decoration: none;
+    color: black;
+}

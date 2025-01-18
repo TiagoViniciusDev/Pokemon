@@ -1,0 +1,50 @@
+.Search{
+    margin: 1em 0;
+}
+
+.Search > .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Search > .container form{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    border: 1px solid #ABABAB;
+    border-radius: 36px;
+    padding: 0 0.5em;
+}
+
+.Search > .container form input{
+    width: 20em;
+    height: 3em;
+    padding: 0.5em;
+    margin-left: 0.5em;
+    border: none;
+    outline: none;
+}
+
+.Search > .container form button{
+    border-radius: 100%;
+    border: none;
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E1E9EF;
+    cursor: pointer;
+}
+
+.Search > .container .filter{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.Search > .container .filter svg{
+    color: #AFAFB0;
+}
+

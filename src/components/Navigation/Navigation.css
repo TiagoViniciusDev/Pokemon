@@ -1,0 +1,50 @@
+.Navigation{
+    margin: 6em auto;
+}
+
+.Navigation > .container{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    justify-content: center;
+}
+
+.Navigation > .container .btn{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    cursor: pointer;
+    padding: 0.5em 1em;
+}
+
+.Navigation > .container .btn:hover{
+    background-color: #D4D7DE;
+}
+
+.Navigation > .container .pages{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.Navigation > .container .pages .pageNumber{
+    width: 2.5em;
+    height: 2.5em;
+    color: #B6B8BC;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Navigation > .container .pages .pageNumber:hover{
+    background-color: #D4D7DE;
+    color: black;
+}
+
+.Navigation > .container .pages .interval:hover{
+    color: #B6B8BC;
+    background-color: white;
+    cursor: default;
+}

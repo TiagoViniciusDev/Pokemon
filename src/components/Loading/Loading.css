@@ -1,0 +1,37 @@
+.Loading{
+    position: absolute; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
+
+.loadingContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    color: black;
+}
+
+.loadingContent svg{
+    font-size: 2em;
+    animation-name: loadingAnimation;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.loadingContent p{
+    font-weight: 600;
+}
+
+@keyframes loadingAnimation{
+    0%{
+        rotate: 0deg;
+    }
+
+    100%{
+        rotate: 360deg;
+    }
+}

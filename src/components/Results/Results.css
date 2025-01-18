@@ -1,0 +1,18 @@
+.Results{
+   margin: 2em 0;
+}
+
+.Results > .container header{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.Results > .container .searchResults{
+    margin: 1em 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1em;
+    position: relative;
+    min-height: 20em;
+}
