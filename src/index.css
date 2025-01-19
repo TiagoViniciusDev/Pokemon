@@ -14,12 +14,24 @@
 }
 
 :root{
+ --backgroundColor: rgb(255,255,255);
  --mainColor: #D4D7DE;
- --cor-principal: gray;
+ --mainColor2: rgb(230,230,230);
+ --textColor: black;
 }
 
 .darkMode{
-  --mainColor: red;
+  --backgroundColor: black;
+  --mainColor: #D4D7DE;
+  --textColor: rgb(255,255,255);
+}
+
+body{
+  background-color: var(--backgroundColor);
+}
+
+p, a, span{
+  color: var(--textColor);
 }
 
 /* ScrollBar Personalizada */

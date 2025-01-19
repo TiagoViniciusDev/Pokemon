@@ -18,7 +18,7 @@
 }
 
 .Navigation > .container .btn:hover{
-    background-color: #D4D7DE;
+    background-color: var(--mainColor);
 }
 
 .Navigation > .container .pages{
@@ -30,7 +30,6 @@
 .Navigation > .container .pages .pageNumber{
     width: 2.5em;
     height: 2.5em;
-    color: #B6B8BC;
     
     display: flex;
     justify-content: center;
@@ -39,12 +38,11 @@
 }
 
 .Navigation > .container .pages .pageNumber:hover{
-    background-color: #D4D7DE;
+    background-color: var(--mainColor);
     color: black;
 }
 
 .Navigation > .container .pages .interval:hover{
-    color: #B6B8BC;
     background-color: white;
     cursor: default;
 }

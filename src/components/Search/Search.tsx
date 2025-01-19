@@ -1,6 +1,5 @@
 import './Search.css'
 import { CiSearch } from "react-icons/ci";
-import { IoFilter } from "react-icons/io5";
 
 //Context
 import { useContext, useState } from 'react';
@@ -43,12 +42,7 @@ function Search() {
                 </button>
             </form>
 
-
-
             <div className='filter'>
-                {/* <IoFilter />
-                <p>Filtrar por:</p> */}
-
                 <div className='compare' onClick={() => {setShowCompareCards(!showCompareCards)}}>
                     <p>Comparar cartas</p>
                 </div>

@@ -11,20 +11,31 @@
 
 .Header > .container img{
     width: 120px;
+    user-select: none;
 }
 
 .Header > .container > div{
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
     gap: 1em;
 }
 
-.Header > .container > div svg{
-    font-size: 1.5em;
+.Header > .container > div .theme{
+    padding: 0.5em;
+    background-color: var(--mainColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.2em;
+}
+
+.Header > .container > div .theme svg{
+    font-size: 1em;
+    cursor: pointer;
 }
 
 .Header > .container > div a{
     text-decoration: none;
-    color: black;
     user-select: none;
 }

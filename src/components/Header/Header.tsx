@@ -25,7 +25,7 @@ function Header() {
         <div className='container'>
             <img src='./logo.svg'/>
             <div>
-              <div onClick={toggleDarkMode}>{darkMode ? <MdDarkMode /> : <MdLightMode />}</div>
+              <div className='theme' onClick={toggleDarkMode} title='Alterar tema'>{darkMode ? <MdDarkMode /> : <MdLightMode />}</div>
               <a href="https://docs.pokemontcg.io/api-reference/cards/search-cards/" target='_blank'>Documentação</a>
             </div>
         </div>
