@@ -1,8 +1,17 @@
 .Modal{
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.Modal .modalContent{
+    z-index: 9999;
     width: 90%;
     height: 90%;
-    z-index: 999;
-    position: fixed;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -18,25 +27,30 @@
     border-radius: 0.5em;
 }
 
-.Modal .close{
+.Modal .modalContent .close{
     display: flex;
     align-items: center;
     background-color: #D4D7DE;
     border: 1px solid black;
     border-radius: 0.3em;
     cursor: pointer;
+    padding: 0.2em;
     
 }
 
-.Modal .close svg{
-    font-size: 2em;
+.Modal .modalContent .close svg{
+    font-size: 1.5em;
 }
 
-.Modal > img{
+.Modal .modalContent .close:hover{
+    background-color: red;
+}
+
+.Modal .modalContent > img{
     height: 100%;
 }
 
-.Modal .info{
+.Modal .modalContent .info{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -46,7 +60,7 @@
     overflow-y: auto;
 }
 
-.Modal .info header{
+.Modal .modalContent .info header{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -57,47 +71,47 @@
     border-bottom: 1px solid black;
 }
 
-.Modal .info header div:nth-of-type(2){
+.Modal .modalContent .info header div:nth-of-type(2){
     display: flex;
-    gap: 1em;
+    gap: 2em;
     align-items: center;
 }
 
-.Modal .info .title{
+.Modal .modalContent .info .title{
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 0.5em;
     font-size: 1.2em;
 }
 
-.Modal .info .skills .skillHeader{
+.Modal .modalContent .info .skills .skillHeader{
     display: flex;
     align-items: center;
     gap: 0.5em;
     margin-bottom: 0.5em;
 }
 
-.Modal .info .skills .skillHeader p{
+.Modal .modalContent .info .skills .skillHeader p{
     font-weight: 500;
 }
 
-.Modal .info .skills .skillHeader p:first-of-type{
+.Modal .modalContent .info .skills .skillHeader p:first-of-type{
     background-color: #D4D7DE;
     padding: 0.5em 1em;
     border-radius: 1em;
     font-weight: 500;
 }
 
-.Modal .info .skills .skill{
+.Modal .modalContent .info .skills .skill{
     margin-bottom: 1em;
 }
 
-.Modal .info .attacks{
+.Modal .modalContent .info .attacks{
     padding-top: 1em;
     border-top: 1px solid black;
 }
 
-.Modal .info .attacks .attackHeader{
+.Modal .modalContent .info .attacks .attackHeader{
     display: flex;
     align-items: center;
     gap: 0.5em;
@@ -105,11 +119,11 @@
     justify-content: space-between;
 }
 
-.Modal .info .attacks .attackHeader p{
+.Modal .modalContent .info .attacks .attackHeader p{
     font-weight: 500;
 }
 
-.Modal .info .attributes{
+.Modal .modalContent .info .attributes{
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 2em;
@@ -117,38 +131,38 @@
     align-items: top;
 }
 
-.Modal .info .attributes .item > p{
+.Modal .modalContent .info .attributes .item > p{
     font-weight: 600;
     margin-bottom: 0.5em;
     text-transform: uppercase;
 }
 
-.Modal .info .attributes .item .itemInfo{
+.Modal .modalContent .info .attributes .item .itemInfo{
     display: flex;
     gap: 1em;
 }
 
-.Modal .info .attributes .set .itemInfo{
+.Modal .modalContent .info .attributes .set .itemInfo{
     display: flex;
     align-items: center;
     gap: 0.5em;
 }
 
-.Modal .info .attributes .set .itemInfo img{
+.Modal .modalContent .info .attributes .set .itemInfo img{
     width: 1.5em;
 }
 
-.Modal .info .markets{
+.Modal .modalContent .info .markets{
     padding-top: 1em;
     border-top: 1px solid black;
 }
 
-.Modal .info .markets .marketOptions{
+.Modal .modalContent .info .markets .marketOptions{
     display: flex;
     gap: 4em;
 }
 
-.Modal .info .markets .marketOptions .market a{
+.Modal .modalContent .info .markets .marketOptions .market a{
     text-decoration: none;
     color: black;
     text-transform: uppercase;

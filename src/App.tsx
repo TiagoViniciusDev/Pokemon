@@ -13,7 +13,7 @@ import { PokemonTCGContext } from './context/PokemonTCGContext'
 
 function App() {
 
-  const { setLoading, setError, setData, filter, setTypes, setRarities } = useContext(PokemonTCGContext)
+  const { setLoading, setError, setData, filter, setTypes, setRarities, setModalData } = useContext(PokemonTCGContext)
 
   // console.log(filter)
 
@@ -142,8 +142,14 @@ function App() {
     getAllRarities()
   },[])
 
+  function checkModal(e){
+    if (e.target.className === "Modal") {
+      setModalData(undefined)
+    }
+  }
+
   return (
-    <div>
+    <div onClick={checkModal}>
       <Header />
       <Search />
       <Modal />
