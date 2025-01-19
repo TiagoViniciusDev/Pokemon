@@ -19,27 +19,27 @@
 }
 
 .darkMode{
-  --mainColor: #D4D7DE;
+  --mainColor: red;
 }
 
 /* ScrollBar Personalizada */
 
-  /* Works on Firefox */
-  * {
-    scrollbar-color: var(--cor-principal) var(--scrollTrack);
-  }
+/* Works on Firefox */
+* {
+  scrollbar-color: var(--cor-principal) var(--scrollTrack);
+}
 
-  /* Works on Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 4px;
-  }
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+}
 
-  *::-webkit-scrollbar-track {
-    background-color: var(--scrollBarCorDeFundo);
-  }
+*::-webkit-scrollbar-track {
+  background-color: var(--scrollBarCorDeFundo);
+}
 
-  *::-webkit-scrollbar-thumb {
-    background-color: var(--cor-principal);
-    border-radius: 20px;
-    border: 3px solid var(--scrollBarCorDeFundo);
-  }
+*::-webkit-scrollbar-thumb {
+  background-color: var(--cor-principal);
+  border-radius: 20px;
+  border: 3px solid var(--scrollBarCorDeFundo);
+}

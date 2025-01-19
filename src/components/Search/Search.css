@@ -55,6 +55,7 @@
     gap: 2em;
 
     background-color: #E1E9EF;
+    background-color: var(--mainColor);
     padding: 0.5em 1em;
     border-radius: 12px;
 }

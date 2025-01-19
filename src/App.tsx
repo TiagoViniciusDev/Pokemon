@@ -14,11 +14,7 @@ import { PokemonTCGContext } from './context/PokemonTCGContext'
 
 function App() {
 
-  const [darkMode, setDarkMode] = useState<boolean>(false)
-
-  const { setLoading, setError, setData, filter, setTypes, setRarities, setModalData } = useContext(PokemonTCGContext)
-
-  // console.log(filter)
+  const { setLoading, darkMode, setDarkMode, setError, setData, filter, setTypes, setRarities, setModalData } = useContext(PokemonTCGContext)
 
   const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -170,7 +166,7 @@ function App() {
       ...prev,  
       [inputKey]: option,
     }));
-  } 
+  }
 
   return (
     <div onClick={checkModal}>

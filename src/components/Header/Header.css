@@ -13,7 +13,18 @@
     width: 120px;
 }
 
-.Header > .container a{
+.Header > .container > div{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.Header > .container > div svg{
+    font-size: 1.5em;
+}
+
+.Header > .container > div a{
     text-decoration: none;
     color: black;
+    user-select: none;
 }

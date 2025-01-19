@@ -24,14 +24,16 @@ interface ModalData {
 }
 
 interface PokemonTCGContextProps {
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  darkMode: boolean;
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+  error: Error;
+  setError: React.Dispatch<React.SetStateAction<Error>>;
   data: Data | undefined;
   setData: React.Dispatch<React.SetStateAction<Data | undefined>>;
   filter: Filter;
   setFilter: React.Dispatch<React.SetStateAction<Filter>>;
-  loading: boolean;
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
-  error: Error;
-  setError: React.Dispatch<React.SetStateAction<Error>>;
   types: Array<string>;
   setTypes: React.Dispatch<React.SetStateAction<Array<string>>>;
   rarities: Array<string>;
@@ -77,14 +79,16 @@ export const PokemonTCGProvider: React.FC<PokemonTCGProviderProps> = ({ children
   const [showCompareCards, setShowCompareCards] = useState<boolean>(false)
 
   const values: PokemonTCGContextProps = {
+    loading, 
+    setLoading,
+    darkMode,
+    setDarkMode,
+    error, 
+    setError,
     data,
     setData,
     filter, 
     setFilter,
-    loading, 
-    setLoading,
-    error, 
-    setError,
     types, 
     setTypes,
     rarities, 
@@ -92,7 +96,7 @@ export const PokemonTCGProvider: React.FC<PokemonTCGProviderProps> = ({ children
     modalData, 
     setModalData,
     showCompareCards, 
-    setShowCompareCards
+    setShowCompareCards,
   };
 
   return (
