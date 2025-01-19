@@ -41,6 +41,12 @@
 .Search > .container .compare{
     padding: 0.5em 1em;
     border-radius: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.Search > .container .compare:hover{
+    background-color: #D4D7DE;
 }
 
 .Search > .container .filter{

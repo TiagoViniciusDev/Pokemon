@@ -14,6 +14,8 @@ import { PokemonTCGContext } from './context/PokemonTCGContext'
 
 function App() {
 
+  const [darkMode, setDarkMode] = useState<boolean>(false)
+
   const { setLoading, setError, setData, filter, setTypes, setRarities, setModalData } = useContext(PokemonTCGContext)
 
   // console.log(filter)

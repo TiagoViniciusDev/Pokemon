@@ -8,7 +8,7 @@ import { PokemonTCGContext } from '../../context/PokemonTCGContext.tsx';
 
 function Search() {
 
-  const { setFilter, types, rarities } = useContext(PokemonTCGContext)
+  const { setFilter, types, rarities, showCompareCards, setShowCompareCards } = useContext(PokemonTCGContext)
   const [search, setSearch] = useState<string>('')
 
   function searchByName(e){
@@ -49,7 +49,7 @@ function Search() {
                 {/* <IoFilter />
                 <p>Filtrar por:</p> */}
 
-                <div className='compare'>
+                <div className='compare' onClick={() => {setShowCompareCards(!showCompareCards)}}>
                     <p>Comparar cartas</p>
                 </div>
 

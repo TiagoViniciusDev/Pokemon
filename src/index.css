@@ -18,6 +18,10 @@
  --cor-principal: gray;
 }
 
+.darkMode{
+  --mainColor: #D4D7DE;
+}
+
 /* ScrollBar Personalizada */
 
   /* Works on Firefox */
