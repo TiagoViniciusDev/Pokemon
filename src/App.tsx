@@ -1,11 +1,12 @@
 import './App.css'
 import Header from './components/Header/Header'
 import Search from './components/Search/Search'
+import CompareCards from './components/CompareCards/CompareCards'
 import Results from './components/Results/Results'
 import Navigation from './components/Navigation/Navigation'
 import Modal from './components/Modal/Modal'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 //Context
 import { useContext } from 'react';
@@ -148,10 +149,32 @@ function App() {
     }
   }
 
+  //Comparar cartas
+
+  interface Option {
+    id: string;
+    name: string;
+  }
+  
+  interface InputsState {
+    input1: Option | null;
+    input2: Option | null;
+  }
+
+  const [inputs, setInputs] = useState<InputsState>({ input1: null, input2: null });
+
+  function handleDrop(inputKey: keyof InputsState, option: Option) {
+    setInputs((prev) => ({
+      ...prev,  
+      [inputKey]: option,
+    }));
+  } 
+
   return (
     <div onClick={checkModal}>
       <Header />
       <Search />
+      <CompareCards inputs={inputs} onDrop={handleDrop} />
       <Modal />
       <Results />
       <Navigation />

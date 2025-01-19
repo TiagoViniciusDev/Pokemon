@@ -19,7 +19,7 @@ interface Error {
 }
 
 interface ModalData {
-  id: String;
+  id: string;
   name: string;
 }
 
