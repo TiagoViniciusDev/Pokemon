@@ -10,8 +10,6 @@ function Modal(){
 
     const { modalData, setModalData } = useContext(PokemonTCGContext)
 
-    console.log(modalData)
-
     if(modalData){
         return(
             <div className='Modal' style={modalData ? {display: "flex"} : {display: "none"}}>   

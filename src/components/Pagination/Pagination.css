@@ -1,15 +1,15 @@
-.Navigation{
+.Pagination{
     margin: 6em auto;
 }
 
-.Navigation > .container{
+.Pagination > .container{
     display: flex;
     align-items: center;
     gap: 1em;
     justify-content: center;
 }
 
-.Navigation > .container .btn{
+.Pagination > .container .btn{
     display: flex;
     align-items: center;
     gap: 0.5em;
@@ -17,17 +17,17 @@
     padding: 0.5em 1em;
 }
 
-.Navigation > .container .btn:hover{
+.Pagination > .container .btn:hover{
     background-color: var(--mainColor);
 }
 
-.Navigation > .container .pages{
+.Pagination > .container .pages{
     display: flex;
     align-items: center;
     gap: 0.5em;
 }
 
-.Navigation > .container .pages .pageNumber{
+.Pagination > .container .pages .pageNumber{
     width: 2.5em;
     height: 2.5em;
     
@@ -37,12 +37,12 @@
     cursor: pointer;
 }
 
-.Navigation > .container .pages .pageNumber:hover{
+.Pagination > .container .pages .pageNumber:hover{
     background-color: var(--mainColor);
     color: black;
 }
 
-.Navigation > .container .pages .interval:hover{
+.Pagination > .container .pages .interval:hover{
     background-color: white;
     cursor: default;
 }

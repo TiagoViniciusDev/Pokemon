@@ -3,7 +3,7 @@ import Header from './components/Header/Header'
 import Search from './components/Search/Search'
 import CompareCards from './components/CompareCards/CompareCards'
 import Results from './components/Results/Results'
-import Navigation from './components/Navigation/Navigation'
+import Pagination from './components/Pagination/Pagination'
 import Modal from './components/Modal/Modal'
 
 import { useEffect, useState } from 'react'
@@ -15,6 +15,8 @@ import { PokemonTCGContext } from './context/PokemonTCGContext'
 function App() {
 
   const { setLoading, darkMode, setDarkMode, setError, setData, filter, setTypes, setRarities, setModalData } = useContext(PokemonTCGContext)
+
+  console.log(filter)
 
   const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -114,7 +116,7 @@ function App() {
   }
 
   useEffect(() => {
-    let Query = `pageSize=${filter.pageSize}&page=${filter.page}&q=name:${filter.q}* types:${filter.type} rarity:"${filter.rarity}"`
+    let Query = `&q=name:${filter.q}* types:${filter.type} rarity:"${filter.rarity}"`
 
     if(filter.q == ''){
       Query = Query.replace(/name:[^ ]*\s?/, ""); //Remove o name:${filter.q}"
@@ -132,8 +134,10 @@ function App() {
       Query = Query.replace(/&/, ""); //Remove o &
     }
 
-    console.log(Query)
-    getAllPokemons(Query)
+    const FinalQuery = `pageSize=${filter.pageSize}&page=${filter.page}${Query}`
+
+    console.log(FinalQuery)
+    getAllPokemons(FinalQuery)
   },[filter])
 
   useEffect(() => {
@@ -175,7 +179,7 @@ function App() {
       <CompareCards inputs={inputs} onDrop={handleDrop} />
       <Modal />
       <Results />
-      <Navigation />
+      <Pagination />
     </div>
   )
 }

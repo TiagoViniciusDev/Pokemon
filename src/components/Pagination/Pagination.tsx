@@ -1,11 +1,11 @@
-import './Navigation.css'
+import './Pagination.css'
 import { MdNavigateBefore } from "react-icons/md";
 
 //Context
 import { useContext, useState, useEffect } from 'react';
 import { PokemonTCGContext } from '../../context/PokemonTCGContext.tsx';
 
-function Navigation() {
+function Pagination() {
 
   const { data, setData, filter, setFilter} = useContext(PokemonTCGContext)
   const [numberOfPages, setNumberOfPages] = useState<number>(0)
@@ -44,7 +44,7 @@ function Navigation() {
   }
 
   return (
-    <nav className='Navigation'>
+    <nav className='Pagination'>
         <div className='container'>
             <div className='btn' onClick={previousPage} style={filter.page < 2 ? {color: "#B6B8BC"} : {}}>
                 <MdNavigateBefore />
@@ -87,4 +87,4 @@ function Navigation() {
   )
 }
 
-export default Navigation
+export default Pagination

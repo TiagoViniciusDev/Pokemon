@@ -35,10 +35,7 @@ function CompareCards({ inputs, onDrop }: InputsProps){
         const optionData = e.dataTransfer.getData('option');
         const option = JSON.parse(optionData) as Option; // Convertendo a string de volta para objeto
         onDrop(inputKey, option);
-      }
-
-    console.log(inputs)
-
+    }
 
     return(
         <section className='CompareCards' style={showCompareCards ? {display: 'block'} : {display: 'none'}}>
