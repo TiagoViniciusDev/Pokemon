@@ -15,6 +15,7 @@
     gap: 0.5em;
     cursor: pointer;
     padding: 0.5em 1em;
+    color: var(--textColor);    
 }
 
 .Pagination > .container .btn:hover{
@@ -37,12 +38,16 @@
     cursor: pointer;
 }
 
+.Pagination > .container .pages .current{
+    background-color: var(--mainColor);
+}
+
 .Pagination > .container .pages .pageNumber:hover{
     background-color: var(--mainColor);
-    color: black;
+    color: var(--textColor);
 }
 
 .Pagination > .container .pages .interval:hover{
-    background-color: white;
+    background-color: var(--backgroundColor);
     cursor: default;
 }

@@ -14,7 +14,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #FDFDFD;
+    background-color: var(--backgroundColor);
 
     display: flex;
     gap: 2em;
@@ -22,7 +22,7 @@
     padding: 2em;
     padding-right: 0;
 
-    border: 1px solid black;
+    border: 1px solid var(--textColor);
     border-radius: 0.5em;
 }
 
@@ -67,7 +67,7 @@
 
     padding-bottom: 0.5em;
 
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--textColor);
 }
 
 .Modal .modalContent .info header div:nth-of-type(2){
@@ -95,7 +95,7 @@
 }
 
 .Modal .modalContent .info .skills .skillHeader p:first-of-type{
-    background-color: #D4D7DE;
+    background-color: var(--mainColor);
     padding: 0.5em 1em;
     border-radius: 1em;
     font-weight: 500;
@@ -107,7 +107,13 @@
 
 .Modal .modalContent .info .attacks{
     padding-top: 1em;
-    border-top: 1px solid black;
+    border-top: 1px solid var(--textColor);
+}
+
+.Modal .modalContent .info .attacks .attacksContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 }
 
 .Modal .modalContent .info .attacks .attackHeader{
@@ -153,7 +159,7 @@
 
 .Modal .modalContent .info .markets{
     padding-top: 1em;
-    border-top: 1px solid black;
+    border-top: 1px solid var(--textColor);
 }
 
 .Modal .modalContent .info .markets .marketOptions{
@@ -163,7 +169,6 @@
 
 .Modal .modalContent .info .markets .marketOptions .market a{
     text-decoration: none;
-    color: black;
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: 0.5em;

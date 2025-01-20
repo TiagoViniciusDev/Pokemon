@@ -23,9 +23,15 @@
     width: 100%;
     height: 3em;
     padding: 0.5em;
-    margin-left: 0.5em;
+    margin-left: 0.7em;
     border: none;
     outline: none;
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+}
+
+.Search > .container form input::placeholder{
+    color: var(--textColor2);
 }
 
 .Search > .container form button{
@@ -35,8 +41,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #E1E9EF;
+    background-color: var(--mainColor);
     cursor: pointer;
+}
+
+.Search > .container form button svg{
+    color: var(--textColor);
 }
 
 .Search > .container .filter{
@@ -61,7 +71,7 @@
 }
 
 .Search > .container .filter .compare:hover{
-    background-color: #D4D7DE;
+    background-color: var(--mainColor);
 }
 
 .Search > .container .filter .selectFilter{

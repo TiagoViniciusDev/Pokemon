@@ -44,15 +44,17 @@ function Modal(){
 
                         <div className='attacks'>
                             <p className='title'>Ataques</p>
-                            {modalData.attacks ? modalData.attacks.map((attack) => (
-                                <div className='attack' key={attack.name}>
-                                    <div className='attackHeader'>
-                                        <p>{attack.name}</p>
-                                        <p>Dano: {attack.damage}</p>
+                            <div className='attacksContainer'>
+                                {modalData.attacks ? modalData.attacks.map((attack) => (
+                                    <div className='attack' key={attack.name}>
+                                        <div className='attackHeader'>
+                                            <p>{attack.name}</p>
+                                            <p>Dano: {attack.damage}</p>
+                                        </div>
+                                        <p>{attack.text}</p>
                                     </div>
-                                    <p>{attack.text}</p>
-                                </div>
-                            )) : ""}
+                                )) : ""}
+                            </div>
                         </div>
 
                         <div className='attributes'>

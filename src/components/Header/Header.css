@@ -1,5 +1,5 @@
 .Header{
-    box-shadow: 0px 4px 4px 0px #00000040;
+    box-shadow: 0px 4px 4px 0px var(--headerBorder);
     padding: 1.5em 0;
 }
 
@@ -33,6 +33,7 @@
 .Header > .container > div .theme svg{
     font-size: 1em;
     cursor: pointer;
+    color: var(--textColor);
 }
 
 .Header > .container > div a{

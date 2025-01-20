@@ -17,41 +17,45 @@
  --backgroundColor: rgb(255,255,255);
  --mainColor: #D4D7DE;
  --mainColor2: rgb(230,230,230);
- --textColor: black;
+ --textColor: rgb(34, 32, 32);
+ --textColor2: #141414;
+ --cardBackgroundColor: rgb(255,255,255);
+ --headerBorder: #00000040;
 }
 
 .darkMode{
   --backgroundColor: black;
-  --mainColor: #D4D7DE;
+  --mainColor: #1F1F1F;
+  --mainColor2: #121212;
   --textColor: rgb(255,255,255);
+  --textColor2: #b3b3b3;
+  --cardBackgroundColor: #121212;
+  --headerBorder: #d3c5c540;
 }
 
 body{
   background-color: var(--backgroundColor);
 }
 
-p, a, span{
+h1, h2, h3, h4, p, a, span{
   color: var(--textColor);
 }
 
 /* ScrollBar Personalizada */
 
-/* Works on Firefox */
-* {
-  scrollbar-color: var(--cor-principal) var(--scrollTrack);
-}
-
-/* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 4px;
+  width: 4px !important; /* largura da scroll bar */
 }
 
 *::-webkit-scrollbar-track {
-  background-color: var(--scrollBarCorDeFundo);
+  /* background-color: var(--scrollBarCorDeFundo); */
+  background-color: transparent; /* cor de fundo da scroll bar */
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--cor-principal);
+  /* background-color: var(--cor-principal); */
+  background-color: gray;
   border-radius: 20px;
-  border: 3px solid var(--scrollBarCorDeFundo);
+  /* border: 3px solid var(--scrollBarCorDeFundo); */
+  /* border: 3px solid green; */
 }

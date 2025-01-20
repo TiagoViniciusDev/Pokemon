@@ -46,9 +46,9 @@ function Pagination() {
   return (
     <nav className='Pagination'>
         <div className='container'>
-            <div className='btn' onClick={previousPage} style={filter.page < 2 ? {color: "#B6B8BC"} : {}}>
+            <div className='btn' onClick={previousPage} style={filter.page < 2 ? {color: "var(--mainColor)"} : {}}>
                 <MdNavigateBefore />
-                <p>Anterior</p>
+                <p style={filter.page < 2 ? {color: "#B6B8BC"} : {}}>Anterior</p>
             </div>
 
             <div className='pages'>
@@ -62,7 +62,7 @@ function Pagination() {
               {filter.page > 2 ? (<div className='pageNumber' onClick={() => {goToPage(filter.page - 2)}}><p>{filter.page - 2}</p></div>) : ""}
               {filter.page > 1 ? (<div className='pageNumber' onClick={() => {goToPage(filter.page - 1)}}><p>{filter.page - 1}</p></div>) : ""}
 
-              <div className='pageNumber' style={{backgroundColor: "#D4D7DE", color: "black"}}><p>{filter.page}</p></div> {/* Página atual */}
+              <div className='pageNumber current'><p>{filter.page}</p></div> {/* Página atual */}
 
               {/* Ultimas páginas */}
               {filter.page < numberOfPages ? (<div className='pageNumber' onClick={() => {goToPage(filter.page + 1)}}><p>{filter.page + 1}</p></div>) : ""}
@@ -78,8 +78,8 @@ function Pagination() {
                 ) : "" }
             </div>
 
-            <div className='btn' onClick={nextPage} style={filter.page >= numberOfPages ? {color: "#B6B8BC"} : {}}>
-                <p>Próximo</p>
+            <div className='btn' onClick={nextPage} style={filter.page >= numberOfPages ? {color: "var(--mainColor)"} : {}}>
+                <p style={filter.page >= numberOfPages ? {color: "#B6B8BC"} : {}}>Próximo</p>
                 <MdNavigateBefore style={{rotate: '180deg'}}/>
             </div>
         </div>
