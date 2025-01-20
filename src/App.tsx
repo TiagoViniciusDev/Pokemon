@@ -16,8 +16,6 @@ function App() {
 
   const { setLoading, darkMode, setDarkMode, setError, setData, filter, setTypes, setRarities, setModalData } = useContext(PokemonTCGContext)
 
-  console.log(filter)
-
   const API_KEY = import.meta.env.VITE_API_KEY;
 
   async function getAllPokemons(query:string){
@@ -43,7 +41,7 @@ function App() {
       }
 
 
-      console.log(await resultObj)
+      console.log(await resultObj)  
       setData(resultObj)  
 
       setError({

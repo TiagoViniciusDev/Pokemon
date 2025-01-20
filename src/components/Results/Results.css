@@ -11,7 +11,7 @@
 .Results > .container .searchResults{
     margin: 1em 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 1em;
     position: relative;
     min-height: 20em;

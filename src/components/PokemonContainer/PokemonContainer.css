@@ -26,7 +26,7 @@
     }
 }
 
-.PokemonContainer img{ /*REMOVER*/
+.PokemonContainer img{
     width: 100%;
     border-radius: 12px 12px 0 0;
 }
@@ -47,6 +47,10 @@
 
 .PokemonContainer .info > div:nth-of-type(2){
     align-items: center;
+}
+
+.PokemonContainer .info > div h3{
+    font-size: 1em;
 }
 
 .PokemonContainer .info > div img{

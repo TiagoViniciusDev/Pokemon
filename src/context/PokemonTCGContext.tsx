@@ -64,7 +64,7 @@ export const PokemonTCGProvider: React.FC<PokemonTCGProviderProps> = ({ children
 
   const [filter, setFilter] = useState<Filter>({
     page: 1,
-    pageSize: 5,
+    pageSize: 10,
     q: '',
     type: 'all',
     rarity: 'all',

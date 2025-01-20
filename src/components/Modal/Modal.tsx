@@ -95,17 +95,21 @@ function Modal(){
                         <div className='markets'>
                             <p className='title'>Mercado</p>
                             <div className='marketOptions'>
-                                <div className='market'>
-                                    <a href={modalData.cardmarket.url} target='_blank' title='Clique para visitar'>Cardmarket</a>
-                                    <p>Preço: €{modalData.cardmarket.prices.avg1}</p>
-                                    <p>Preço medio: €{modalData.cardmarket.prices.averageSellPrice}</p>
-                                </div>
+                                {modalData.cardmarket ? (
+                                    <div className='market'>
+                                        <a href={modalData.cardmarket.url} target='_blank' title='Clique para visitar'>Cardmarket</a>
+                                        <p>Preço: €{modalData.cardmarket.prices.avg1}</p>
+                                        <p>Preço medio: €{modalData.cardmarket.prices.averageSellPrice}</p>
+                                    </div>
+                                ) : <p>N/A</p>}
 
-                                <div className='market'>
-                                    <a href={modalData.tcgplayer.url} target='_blank' title='Clique para visitar'>Tcgplayer</a>
-                                    <p>Preço: ${modalData.tcgplayer.prices.holofoil.market}</p>
-                                    <p>Preço medio: ${modalData.tcgplayer.prices.holofoil.mid}</p>
-                                </div>  
+                                {modalData.tcgplayer ? (
+                                    <div className='market'>
+                                        <a href={modalData.tcgplayer.url} target='_blank' title='Clique para visitar'>Tcgplayer</a>
+                                        {modalData.tcgplayer.prices.holofoil ? (<p>Preço: ${modalData.tcgplayer.prices.holofoil.market}</p>) : <p>N/A</p>}
+                                        {modalData.tcgplayer.prices.holofoil ? (<p>Preço medio: ${modalData.tcgplayer.prices.holofoil.mid}</p>) : <p>N/A</p>}
+                                    </div>  
+                                ) : <p>N/A</p>}
                             </div>
                         </div>
                     </div>
