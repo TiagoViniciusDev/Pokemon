@@ -174,7 +174,7 @@ function App() {
     <div onClick={checkModal}>
       <Header />
       <Search />
-      <CompareCards inputs={inputs} onDrop={handleDrop} />
+      <CompareCards inputs={inputs} onDrop={handleDrop} setInputs={setInputs} />
       <Modal />
       <Results />
       <Pagination />

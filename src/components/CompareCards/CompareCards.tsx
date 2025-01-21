@@ -1,5 +1,7 @@
 import './CompareCards.css'
 
+import { IoMdRemoveCircleOutline } from "react-icons/io";
+
 interface Option {
     id: string;
     name: string;
@@ -23,7 +25,7 @@ interface InputsProps {
 import { useContext } from 'react';
 import { PokemonTCGContext } from '../../context/PokemonTCGContext.tsx';
 
-function CompareCards({ inputs, onDrop }: InputsProps){
+function CompareCards({ inputs, onDrop, setInputs }: InputsProps){
 
     const { showCompareCards, setShowCompareCards } = useContext(PokemonTCGContext)
 
@@ -40,7 +42,12 @@ function CompareCards({ inputs, onDrop }: InputsProps){
     return(
         <section className='CompareCards' style={showCompareCards ? {display: 'block'} : {display: 'none'}}>
             <div className='container'>
-                <div className='input' key="input1" onDragOver={handleDragOver} onDrop={(e) => handleDrop(e, "input1" as keyof InputsProps['inputs'])} style={inputs.input1 ? {backgroundImage: `url(${inputs.input1.images.large})`} : {backgroundImage: "none"}}> 
+                <div className='input' key="input1" onDragOver={handleDragOver} onDrop={(e) => handleDrop(e, "input1" as keyof InputsProps['inputs'])} style={inputs.input1 ? {backgroundImage: `url(${inputs.input1.images.large})`} : {backgroundImage: "none"}} onClick={() => {
+                        setInputs((prev) => ({
+                            ...prev,  
+                            input1: undefined,
+                        }));
+                    }}> 
                     <div className='inputInfo' style={inputs.input1 ? {display: "none"} : {display: "flex"}}>
                         <p>Carta 1</p>
                         <p>Arraste a carta</p>
@@ -86,7 +93,12 @@ function CompareCards({ inputs, onDrop }: InputsProps){
                     </div>
                 ) : ""}
 
-                <div className='input' key="input2" onDragOver={handleDragOver} onDrop={(e) => handleDrop(e, "input2" as keyof InputsProps['inputs'])} style={inputs.input2 ? {backgroundImage: `url(${inputs.input2.images.large})`} : {backgroundImage: "none"}}>
+                <div className='input' key="input2" onDragOver={handleDragOver} onDrop={(e) => handleDrop(e, "input2" as keyof InputsProps['inputs'])} style={inputs.input2 ? {backgroundImage: `url(${inputs.input2.images.large})`} : {backgroundImage: "none"}} onClick={() => {
+                        setInputs((prev) => ({
+                            ...prev,  
+                            input2: undefined,
+                        }));
+                    }}>
                     <div className='inputInfo' style={inputs.input2 ? {display: "none"} : {display: "flex"}}>
                         <p>Carta 2</p>
                         <p>Arraste a carta</p>
