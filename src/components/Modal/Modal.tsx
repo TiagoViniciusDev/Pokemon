@@ -39,7 +39,7 @@ function Modal(){
                                     </div>
                                     <p>{ability.text}</p>
                                 </div>
-                            )) : ""}
+                            )) : <p>N/A</p>}
                         </div>
 
                         <div className='attacks'>
@@ -53,7 +53,7 @@ function Modal(){
                                         </div>
                                         <p>{attack.text}</p>
                                     </div>
-                                )) : ""}
+                                )) : <p>N/A</p>}
                             </div>
                         </div>
 
@@ -63,7 +63,7 @@ function Modal(){
                                 <div className='itemInfo'>
                                     {modalData.resistances ? modalData.resistances.map((resistance) => (
                                         <p key={resistance.type}>{resistance.type}: {resistance.value}</p>
-                                    )) : ""}
+                                    )) : <p>N/A</p>}
                                 </div>
                             </div>
 
@@ -72,7 +72,7 @@ function Modal(){
                                 <div className='itemInfo'>
                                     {modalData.weaknesses ? modalData.weaknesses.map((weakness) => (
                                         <p key={weakness.type}>{weakness.type}: {weakness.value}</p>
-                                    )) : ""}
+                                    )) : <p>N/A</p>}
                                 </div>
                             </div>
 
@@ -87,7 +87,7 @@ function Modal(){
                             <div className='rarity item'>
                                 <p>Raridade</p>
                                 <div className='itemInfo'>
-                                    <p>{modalData.rarity}</p>
+                                    {modalData.rarity ? <p>{modalData.rarity}</p> : <p>N/A</p>} 
                                 </div>
                             </div>
                         </div>

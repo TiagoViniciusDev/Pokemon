@@ -10,9 +10,12 @@ function Pagination() {
   const { data, setData, filter, setFilter} = useContext(PokemonTCGContext)
   const [numberOfPages, setNumberOfPages] = useState<number>(0)
 
+  console.log(`pagina atual: ${filter.page}`)
+  console.log(`numero de paginas: ${numberOfPages}`)
+
   useEffect(() => {
     if(data){
-      setNumberOfPages(Math.floor(data.totalCount/20))
+      setNumberOfPages(Math.ceil(data.totalCount/20))
     }
   },[data])
 
@@ -67,8 +70,8 @@ function Pagination() {
               {/* Ultimas páginas */}
               {filter.page < numberOfPages ? (<div className='pageNumber' onClick={() => {goToPage(filter.page + 1)}}><p>{filter.page + 1}</p></div>) : ""}
               {filter.page < numberOfPages - 1 ? (<div className='pageNumber' onClick={() => {goToPage(filter.page + 2)}}><p>{filter.page + 2}</p></div>) : ""}
-              {filter.page > 4 ? "" : (<div className='pageNumber' onClick={() => {goToPage(filter.page + 3)}}><p>{filter.page + 3}</p></div>)}
-              {filter.page > 1 ? "" : (<div className='pageNumber' onClick={() => {goToPage(filter.page + 4)}}><p>{filter.page + 4}</p></div>)}
+              {filter.page > 4 || numberOfPages < 4 ? "" : (<div className='pageNumber' onClick={() => {goToPage(filter.page + 3)}}><p>{filter.page + 3}</p></div>)}
+              {filter.page > 1 || numberOfPages < 5 ? "" : (<div className='pageNumber' onClick={() => {goToPage(filter.page + 4)}}><p>{filter.page + 4}</p></div>)}
 
               {filter.page < numberOfPages - 2 ? ( 
                 <>  
