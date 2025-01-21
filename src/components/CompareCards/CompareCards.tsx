@@ -56,7 +56,7 @@ function CompareCards({ inputs, onDrop }: InputsProps){
                     <div className='compareInfo'>
                         <div className='details'>
                             <p className='headerText'>{inputs.input1.name}</p>
-                            <p><img src="./icon1.svg" alt="" /></p>
+                            <p><img src="./pokebola.svg" alt="" /></p>
                             <p className='headerText'>{inputs.input2.name}</p>
 
                             {inputs.input1.hp ? <p>{inputs.input1.hp}</p> : <p>N/A</p>}

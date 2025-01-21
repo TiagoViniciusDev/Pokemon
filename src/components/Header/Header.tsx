@@ -23,7 +23,7 @@ function Header() {
   return (
     <header className='Header'>
         <div className='container'>
-            <img src='./logo.svg'/>
+            <img src='./logo2.svg' alt='logo'/>
             <div>
               <div className='theme' onClick={toggleDarkMode} title='Alterar tema'>{darkMode ? <MdDarkMode /> : <MdLightMode />}</div>
               <a href="https://docs.pokemontcg.io/api-reference/cards/search-cards/" target='_blank'>Documentação</a>

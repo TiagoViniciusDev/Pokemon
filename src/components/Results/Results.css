@@ -8,6 +8,10 @@
     gap: 0.5em;
 }
 
+.Results > .container header img{
+    width: 1.5em;
+}
+
 .Results > .container .searchResults{
     margin: 1em 0;
     display: grid;

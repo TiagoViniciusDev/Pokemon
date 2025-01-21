@@ -1,0 +1,28 @@
+.Error{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--backgroundColor);
+}
+
+.Error .errorMsg{
+    width: fit-content;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--textColor);
+    padding: 2em 3em;
+}
+
+.Error .errorMsg h2{
+    font-weight: 600;
+    margin-bottom: 0.2em;
+}
+
+.Error .errorMsg button{
+    margin-top: 1em;
+    padding: 0.5em 1em;
+}

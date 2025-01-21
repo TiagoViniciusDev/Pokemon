@@ -15,7 +15,7 @@ function Results() {
     <main className='Results'>
         <div className='container'>
             <header>
-                <img src='./icon1.svg'/>
+                <img src='./pokebola.svg'/>
                 <p>{data && !loading ? `Total de ${data.totalCount} Pokémons` : 'Pokémons'}</p> 
             </header>
             <div className='searchResults'>
