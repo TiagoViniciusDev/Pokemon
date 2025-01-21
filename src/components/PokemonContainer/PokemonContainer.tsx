@@ -22,12 +22,12 @@ function PokemonContainer({data}) {
         <img src={data.images.large} alt={data.name} /> 
         <div className='info'>
             <div>
-                <h3>{data.name}</h3>
-                <p>{data.types[0]}</p>
+                {data.name ? <h3>{data.name}</h3> : <h3>N/A</h3>}
+                {data.types ? <p>{data.types[0]}</p> : <p>N/A</p>}
             </div>
             <div>
                 <img src={data.set.images.symbol} alt={data.name} />
-                <p>{data.rarity}</p>
+                {data.rarity ? <p>{data.rarity}</p> : <p>N/A</p>}
             </div>
         </div>  
     </div>

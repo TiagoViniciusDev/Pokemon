@@ -18,11 +18,11 @@ function Modal(){
                     <div className='info'>
                         <header>
                             <div>
-                                <h2>{modalData.name}</h2>
-                                <p>{modalData.supertype} - {modalData.subtypes[0]}</p>
+                                {modalData.name ? <h2>{modalData.name}</h2> : <h2>N/A</h2>}
+                                {modalData.supertype && modalData.subtypes[0] ? <p>{modalData.supertype} - {modalData.subtypes[0]}</p> : <p>N/A</p>}
                             </div>
                             <div>
-                                <p>HP {modalData.hp}</p>
+                                {modalData.hp ? <p>HP {modalData.hp}</p> : <p>N/A</p>}
                                 <button className='close' title='fechar' onClick={() => {setModalData(undefined)}}>
                                     <IoMdClose />
                                 </button>
@@ -80,7 +80,7 @@ function Modal(){
                                 <p>SET</p>
                                 <div className='itemInfo'>
                                     <img src={modalData.set.images.symbol} alt="simbolo" />
-                                    <p>{modalData.set.name}</p>
+                                    {modalData.set.name ? <p>{modalData.set.name}</p> : <p>N/A</p>}
                                 </div>
                             </div>
 
