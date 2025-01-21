@@ -10,9 +10,16 @@ function Modal(){
 
     const { modalData, setModalData } = useContext(PokemonTCGContext)
 
+    function checkModal(e: React.MouseEvent<HTMLDivElement>){
+        const target = e.target as HTMLElement; // Garantimos que o target é um HTMLElement
+        if (target.className === "Modal") {
+          setModalData(undefined);
+        }
+    }
+
     if(modalData){
         return(
-            <div className='Modal' style={modalData ? {display: "flex"} : {display: "none"}}>   
+            <div className='Modal' style={modalData ? {display: "flex"} : {display: "none"}} onClick={checkModal}>   
                 <div className='modalContent'>
                     <img src={modalData.images.large} alt={modalData.name} />
                     <div className='info'>

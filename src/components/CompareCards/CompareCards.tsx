@@ -1,24 +1,14 @@
 import './CompareCards.css'
 
-import { IoMdRemoveCircleOutline } from "react-icons/io";
-
-interface Option {
-    id: string;
-    name: string;
-    hp: string;
-    rarity: string;
-    types: Array<string>;
-    level: string | undefined;
-    resistances: Array<object>;
-    weaknesses: Array<object>;
-}
+import { dataInterface } from '../../interfaces/interfaces.ts';
 
 interface InputsProps {
     inputs: {
-      input1: Option | null;
-      input2: Option | null;
+      input1: dataInterface | null;
+      input2: dataInterface | null;
     };
-    onDrop: (inputKey: keyof InputsProps['inputs'], option: Option) => void;
+    onDrop: (inputKey: keyof InputsProps['inputs'], option: dataInterface) => void;
+    setInputs: React.Dispatch<React.SetStateAction<InputsProps['inputs']>>;
 }
 
 //Context
@@ -27,7 +17,7 @@ import { PokemonTCGContext } from '../../context/PokemonTCGContext.tsx';
 
 function CompareCards({ inputs, onDrop, setInputs }: InputsProps){
 
-    const { showCompareCards, setShowCompareCards } = useContext(PokemonTCGContext)
+    const { showCompareCards } = useContext(PokemonTCGContext)
 
     function handleDragOver(e: React.DragEvent<HTMLDivElement>) {
         e.preventDefault();
@@ -35,7 +25,7 @@ function CompareCards({ inputs, onDrop, setInputs }: InputsProps){
     
     function handleDrop(e: React.DragEvent<HTMLDivElement>, inputKey: keyof InputsProps['inputs']) {
         const optionData = e.dataTransfer.getData('option');
-        const option = JSON.parse(optionData) as Option; // Convertendo a string de volta para objeto
+        const option = JSON.parse(optionData) as dataInterface; // Convertendo a string de volta para objeto
         onDrop(inputKey, option);
     }
 
@@ -45,7 +35,7 @@ function CompareCards({ inputs, onDrop, setInputs }: InputsProps){
                 <div className='input' key="input1" onDragOver={handleDragOver} onDrop={(e) => handleDrop(e, "input1" as keyof InputsProps['inputs'])} style={inputs.input1 ? {backgroundImage: `url(${inputs.input1.images.large})`} : {backgroundImage: "none"}} onClick={() => {
                         setInputs((prev) => ({
                             ...prev,  
-                            input1: undefined,
+                            input1: null,
                         }));
                     }}> 
                     <div className='inputInfo' style={inputs.input1 ? {display: "none"} : {display: "flex"}}>
@@ -96,7 +86,7 @@ function CompareCards({ inputs, onDrop, setInputs }: InputsProps){
                 <div className='input' key="input2" onDragOver={handleDragOver} onDrop={(e) => handleDrop(e, "input2" as keyof InputsProps['inputs'])} style={inputs.input2 ? {backgroundImage: `url(${inputs.input2.images.large})`} : {backgroundImage: "none"}} onClick={() => {
                         setInputs((prev) => ({
                             ...prev,  
-                            input2: undefined,
+                            input2: null,
                         }));
                     }}>
                     <div className='inputInfo' style={inputs.input2 ? {display: "none"} : {display: "flex"}}>

@@ -6,6 +6,8 @@ import Results from './components/Results/Results'
 import Pagination from './components/Pagination/Pagination'
 import Modal from './components/Modal/Modal'
 
+import { dataInterface } from './interfaces/interfaces'
+
 import { useEffect, useState } from 'react'
 
 //Context
@@ -14,7 +16,7 @@ import { PokemonTCGContext } from './context/PokemonTCGContext'
 
 function App() {
 
-  const { setLoading, darkMode, setDarkMode, setError, setData, filter, setTypes, setRarities, setModalData } = useContext(PokemonTCGContext)
+  const { setLoading, setError, setData, filter, setTypes, setRarities } = useContext(PokemonTCGContext)
 
   const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -35,11 +37,6 @@ function App() {
       }
 
       const resultObj = await response.json()
-
-      if(resultObj.data.length < 1){
-        throw new Error("Nenhum carta encontrada")
-      }
-
 
       console.log(await resultObj)  
       setData(resultObj)  
@@ -142,28 +139,17 @@ function App() {
     getAllTypes()
     getAllRarities()
   },[])
-
-  function checkModal(e){
-    if (e.target.className === "Modal") {
-      setModalData(undefined)
-    }
-  }
-
-  //Comparar cartas
-
-  interface Option {
-    id: string;
-    name: string;
-  }
   
   interface InputsState {
-    input1: Option | null;
-    input2: Option | null;
+    input1: dataInterface | null;
+    input2: dataInterface | null;
   }
 
   const [inputs, setInputs] = useState<InputsState>({ input1: null, input2: null });
 
-  function handleDrop(inputKey: keyof InputsState, option: Option) {
+  console.log(inputs)
+
+  function handleDrop(inputKey: keyof InputsState, option: dataInterface) {
     setInputs((prev) => ({
       ...prev,  
       [inputKey]: option,
@@ -171,7 +157,7 @@ function App() {
   }
 
   return (
-    <div onClick={checkModal}>
+    <div>
       <Header />
       <Search />
       <CompareCards inputs={inputs} onDrop={handleDrop} setInputs={setInputs} />

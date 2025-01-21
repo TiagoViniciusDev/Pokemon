@@ -1,3 +1,5 @@
+import { FormEvent } from 'react';
+
 import './Search.css'
 import { CiSearch } from "react-icons/ci";
 
@@ -10,7 +12,7 @@ function Search() {
   const { setFilter, types, rarities, showCompareCards, setShowCompareCards } = useContext(PokemonTCGContext)
   const [search, setSearch] = useState<string>('')
 
-  function searchByName(e){
+  function searchByName(e: FormEvent){
     e.preventDefault()
     setFilter((prevFilter) => ({
         ...prevFilter, // mantém os outros valores
@@ -18,14 +20,14 @@ function Search() {
       }))
   }
 
-  function searchByType(cardType){
+  function searchByType(cardType:string){
     setFilter((prevFilter) => ({
         ...prevFilter, // mantém os outros valores
         type: cardType 
       }))
   }
 
-  function searchByRarity(cardRarity){
+  function searchByRarity(cardRarity:string){
     setFilter((prevFilter) => ({
         ...prevFilter, // mantém os outros valores
         rarity: cardRarity
@@ -36,7 +38,7 @@ function Search() {
     <div className='Search'>
         <div className='container'>
             <form onSubmit={searchByName}>
-                <input type='search' placeholder='Pesquise um pokémon' onChange={(e) => {setSearch(e.target.value)}}/>
+                <input type='text' placeholder='Pesquise um pokémon' name='buscar' onChange={(e) => {setSearch(e.target.value)}}/>
                 <button type='submit'>
                     <CiSearch />
                 </button>

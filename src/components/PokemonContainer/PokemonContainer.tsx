@@ -1,5 +1,7 @@
 import './PokemonContainer.css'
 
+import { dataInterface } from '../../interfaces/interfaces.ts';
+
 interface Option {
   id: string;
   name: string;
@@ -9,7 +11,7 @@ interface Option {
 import { useContext } from 'react';
 import { PokemonTCGContext } from '../../context/PokemonTCGContext.tsx';
 
-function PokemonContainer({data}) {
+function PokemonContainer({data}: {data: dataInterface;}){
 
   const { setModalData } = useContext(PokemonTCGContext)
 

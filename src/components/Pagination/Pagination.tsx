@@ -7,11 +7,8 @@ import { PokemonTCGContext } from '../../context/PokemonTCGContext.tsx';
 
 function Pagination() {
 
-  const { data, setData, filter, setFilter} = useContext(PokemonTCGContext)
+  const { data, filter, setFilter} = useContext(PokemonTCGContext)
   const [numberOfPages, setNumberOfPages] = useState<number>(0)
-
-  console.log(`pagina atual: ${filter.page}`)
-  console.log(`numero de paginas: ${numberOfPages}`)
 
   useEffect(() => {
     if(data){
@@ -39,7 +36,7 @@ function Pagination() {
     }
   }
 
-  function goToPage(pageNumber){
+  function goToPage(pageNumber:number){
     setFilter((prevFilter) => ({
       ...prevFilter, 
       page: pageNumber //Vai para página indicada

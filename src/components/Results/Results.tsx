@@ -11,6 +11,8 @@ function Results() {
 
   const { loading, data, error } = useContext(PokemonTCGContext)
 
+//   console.log(data.count)
+
   return (
     <main className='Results'>
         <div className='container'>
@@ -21,7 +23,7 @@ function Results() {
             <div className='searchResults'>
                 {data && data.data.length > 0 && !loading && !error.value ? data.data.map((item) => (
                     <PokemonContainer key={item.id} data={item} />
-                )) : error.value ? <Error /> : (<Loading />)}
+                )) : error.value ? <Error /> : data?.totalCount == 0 ? <p>Nenhuma carta encontrada</p> : (<Loading />)}
             </div>
         </div>
     </main>

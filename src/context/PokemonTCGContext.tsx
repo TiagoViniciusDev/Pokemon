@@ -1,8 +1,13 @@
 import React, { createContext, useState, ReactNode } from "react";
 
+import { dataInterface } from "../interfaces/interfaces";
+
 interface Data {
-  name: string;
-  type: string;
+  data: Array<dataInterface>;
+  page: number;
+  pageSize: number;
+  count: number;
+  totalCount: number;
 }
 
 interface Filter {
@@ -13,14 +18,9 @@ interface Filter {
   rarity: string;
 }
 
-interface Error {
+interface ErrorInterface {
   value: boolean;
-  menssage: string;
-}
-
-interface ModalData {
-  id: string;
-  name: string;
+  message: string;
 }
 
 interface PokemonTCGContextProps {
@@ -28,8 +28,8 @@ interface PokemonTCGContextProps {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   darkMode: boolean;
   setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
-  error: Error;
-  setError: React.Dispatch<React.SetStateAction<Error>>;
+  error: ErrorInterface;
+  setError: React.Dispatch<React.SetStateAction<ErrorInterface>>;
   data: Data | undefined;
   setData: React.Dispatch<React.SetStateAction<Data | undefined>>;
   filter: Filter;
@@ -38,13 +38,32 @@ interface PokemonTCGContextProps {
   setTypes: React.Dispatch<React.SetStateAction<Array<string>>>;
   rarities: Array<string>;
   setRarities: React.Dispatch<React.SetStateAction<Array<string>>>;
-  modalData: ModalData | undefined;
-  setModalData: React.Dispatch<React.SetStateAction<ModalData | undefined>>;
+  modalData: dataInterface | undefined;
+  setModalData: React.Dispatch<React.SetStateAction<dataInterface | undefined>>;
   showCompareCards: boolean;
   setShowCompareCards: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const PokemonTCGContext = createContext<PokemonTCGContextProps | undefined>(undefined);
+export const PokemonTCGContext = createContext<PokemonTCGContextProps>({ //CreateContext com valores iniciais
+  loading: false,
+  setLoading: () => {},
+  darkMode: false,
+  setDarkMode: () => {},
+  error: { value: false, message: "" },
+  setError: () => {},
+  data: undefined,
+  setData: () => {},
+  filter: { page: 1, pageSize: 10, q: "", type: "all", rarity: "all" },
+  setFilter: () => {},
+  types: [],
+  setTypes: () => {},
+  rarities: [],
+  setRarities: () => {},
+  modalData: undefined,
+  setModalData: () => {},
+  showCompareCards: false,
+  setShowCompareCards: () => {},
+});
 
 interface PokemonTCGProviderProps {
   children: ReactNode;
@@ -55,9 +74,9 @@ export const PokemonTCGProvider: React.FC<PokemonTCGProviderProps> = ({ children
 
   const [darkMode, setDarkMode] = useState<boolean>(false)
 
-  const [error, setError] = useState<Error>({
+  const [error, setError] = useState<ErrorInterface>({
     value: false,
-    menssage: '',
+    message: '',
   })
 
   const [data, setData] = useState<Data | undefined>();
@@ -74,7 +93,7 @@ export const PokemonTCGProvider: React.FC<PokemonTCGProviderProps> = ({ children
 
   const [rarities, setRarities] = useState<Array<string>>([])
 
-  const [modalData, setModalData] = useState<ModalData | undefined>();
+  const [modalData, setModalData] = useState<dataInterface | undefined>();
 
   const [showCompareCards, setShowCompareCards] = useState<boolean>(false)
 

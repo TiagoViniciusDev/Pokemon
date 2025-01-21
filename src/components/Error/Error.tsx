@@ -6,7 +6,7 @@ import { PokemonTCGContext } from '../../context/PokemonTCGContext.tsx';
 
 function Error(){
 
-    const { error, setError } = useContext(PokemonTCGContext)
+    const { error } = useContext(PokemonTCGContext)
 
     function goHome(){
         window.location.reload();
