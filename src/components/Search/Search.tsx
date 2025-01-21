@@ -35,7 +35,7 @@ function Search() {
   }
 
   return (
-    <div className='Search'>
+    <section className='Search'>
         <div className='container'>
             <form onSubmit={searchByName}>
                 <input type='text' placeholder='Pesquise um pokémon' name='buscar' onChange={(e) => {setSearch(e.target.value)}}/>
@@ -70,7 +70,7 @@ function Search() {
                 </div>
             </div>
         </div>
-    </div>
+    </section>
   )
 }
 
