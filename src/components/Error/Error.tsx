@@ -9,7 +9,7 @@ function Error(){
     const { error } = useContext(PokemonTCGContext)
 
     function goHome(){
-        window.location.reload();
+        window.location.reload()
     }
 
     return(

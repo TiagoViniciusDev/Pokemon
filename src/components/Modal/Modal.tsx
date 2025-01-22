@@ -11,7 +11,7 @@ function Modal(){
     const { modalData, setModalData } = useContext(PokemonTCGContext)
 
     function checkModal(e: React.MouseEvent<HTMLDivElement>){
-        const target = e.target as HTMLElement; // Garantimos que o target é um HTMLElement
+        const target = e.target as HTMLElement; // Garantindo que o target é um HTMLElement
         if (target.className === "Modal") {
           setModalData(undefined);
         }

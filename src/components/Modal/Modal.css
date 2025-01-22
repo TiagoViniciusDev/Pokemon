@@ -29,8 +29,8 @@
 .Modal .modalContent .close{
     display: flex;
     align-items: center;
-    background-color: #D4D7DE;
-    border: 1px solid black;
+    background-color: var(--mainColor);
+    border: 1px solid var(--textColor);
     border-radius: 0.3em;
     cursor: pointer;
     padding: 0.2em;    
@@ -38,6 +38,7 @@
 
 .Modal .modalContent .close svg{
     font-size: 1.5em;
+    color: var(--textColor);
 }
 
 .Modal .modalContent .close:hover{

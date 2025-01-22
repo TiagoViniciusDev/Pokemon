@@ -12,21 +12,22 @@ interface InputsProps {
 }
 
 //Context
-import { useContext } from 'react';
-import { PokemonTCGContext } from '../../context/PokemonTCGContext.tsx';
+import { useContext } from 'react'
+import { PokemonTCGContext } from '../../context/PokemonTCGContext.tsx'
 
 function CompareCards({ inputs, onDrop, setInputs }: InputsProps){
 
     const { showCompareCards, setShowCompareCards } = useContext(PokemonTCGContext)
 
+
     function handleDragOver(e: React.DragEvent<HTMLDivElement>) {
-        e.preventDefault();
+        e.preventDefault()
     }
     
     function handleDrop(e: React.DragEvent<HTMLDivElement>, inputKey: keyof InputsProps['inputs']) {
-        const optionData = e.dataTransfer.getData('option');
-        const option = JSON.parse(optionData) as dataInterface; // Convertendo a string de volta para objeto
-        onDrop(inputKey, option);
+        const optionData = e.dataTransfer.getData('option')
+        const option = JSON.parse(optionData) as dataInterface // Convertendo a string de volta para objeto
+        onDrop(inputKey, option)
     }
 
     return(
@@ -36,7 +37,7 @@ function CompareCards({ inputs, onDrop, setInputs }: InputsProps){
                         setInputs((prev) => ({
                             ...prev,  
                             input1: null,
-                        }));
+                        }))
                     }}> 
                     <div className='inputInfo' style={inputs.input1 ? {display: "none"} : {display: "flex"}}>
                         <p>Carta 1</p>
@@ -90,7 +91,7 @@ function CompareCards({ inputs, onDrop, setInputs }: InputsProps){
                         setInputs((prev) => ({
                             ...prev,  
                             input2: null,
-                        }));
+                        }))
                     }}>
                     <div className='inputInfo' style={inputs.input2 ? {display: "none"} : {display: "flex"}}>
                         <p>Carta 2</p>

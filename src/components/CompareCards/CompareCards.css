@@ -91,8 +91,8 @@
     .CompareCards > .container{
         flex-wrap: wrap;
         justify-content: center;
-        gap: 2em;
-        padding: 0 1em;
+        gap: 1.5em;
+        padding: 1em;
     }
 
     .CompareCards > .container .input:first-of-type{
@@ -102,7 +102,11 @@
     .CompareCards .container .dragInfo{
         order: 1;
         width: 100%;
-        margin-bottom: 2em;
+        margin-bottom: 2em; 
+    }
+
+    .CompareCards .container .compareInfo{
+        width: 100%;
     }
 
     .CompareCards > .container .input:last-of-type{
@@ -113,6 +117,11 @@
 @media screen and (max-width: 500px) {
     .CompareCards{
         font-size: 14px;
+    }
+
+    .CompareCards > .container .input{
+        height: calc(825px * 0.2);
+        width: calc(600px * 0.2);
     }
     
     .CompareCards .container .compareInfo{
@@ -127,7 +136,12 @@
 @media screen and (max-width: 360px) {
     .CompareCards{
         font-size: 12px;
-    }   
+    }
+    
+    .CompareCards > .container .input{
+        height: calc(825px * 0.15);
+        width: calc(600px * 0.15);
+    }
 
     .CompareCards .container .compareInfo .details{
         gap: 0 0.5em;

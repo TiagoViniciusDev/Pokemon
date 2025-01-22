@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+O Projeto foi feito com React.tsx consumindo a api do [PokemonTCG](https://docs.pokemontcg.io/api-reference/cards/search-cards/) 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Preview](Images/img1.png)
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Filtro de busca
+Permite busca por nome, raridade e tipo
+![Filtro de busca](Images/img4.png)
 
-## Expanding the ESLint configuration
+### Janela modal
+Contendo informações detalhadas sobre as cartas
+![Janela Modal](Images/img5.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Botão para alterar entre os temas escuro e claro.
+A preferência é salva no localStorage
+![Tema Escuro](Images/img2.png)
 
-- Configure the top-level `parserOptions` property like this:
+### Sistema para comparação de cartas
+Sistema que permite que o usuário compare atributos de duas cartas
+![sistema de comparação de cartas](Images/img3.png)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Navegação entre páginas
+Permite que o usuário navegue pelas páginas, tendo assim acesso a todas as cartas. (São mostradas 15 cartas por página)
+![navegação entre páginas](Images/img6.png)
+
+
+## Iniciando Projeto
+Para instalar as dependencias necessárias navegue até a pasta do projeto e digite o comando no terminal
+ 
+```bash
+ npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Para execultar o projeto você precisará de uma chave de acesso da Api. Você pode obte-la ao se cadastrar no site: [PokemonTCG.io](https://dev.pokemontcg.io/). Após ter sua chave crie um arquivo ".env" na raiz do projeto como descrito abaixo
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+ VITE_API_KEY="SUA_CHAVE"
 ```
+
+Para execultar o projeto use o comando abaixo
+
+```bash
+ npm run dev
+```
+
+
