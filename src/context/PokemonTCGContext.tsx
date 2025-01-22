@@ -53,7 +53,7 @@ export const PokemonTCGContext = createContext<PokemonTCGContextProps>({ //Creat
   setError: () => {},
   data: undefined,
   setData: () => {},
-  filter: { page: 1, pageSize: 10, q: "", type: "all", rarity: "all" },
+  filter: { page: 1, pageSize: 15, q: "", type: "all", rarity: "all" },
   setFilter: () => {},
   types: [],
   setTypes: () => {},
@@ -83,7 +83,7 @@ export const PokemonTCGProvider: React.FC<PokemonTCGProviderProps> = ({ children
 
   const [filter, setFilter] = useState<Filter>({
     page: 1,
-    pageSize: 10,
+    pageSize: 15,
     q: '',
     type: 'all',
     rarity: 'all',
