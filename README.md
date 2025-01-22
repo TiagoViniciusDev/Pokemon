@@ -6,22 +6,27 @@ O Projeto foi feito com React.js (tsx) consumindo a api do [PokemonTCG](https://
 
 ### Filtro de busca
 Permite busca por nome, raridade e tipo
+
 ![Filtro de busca](Images/img4.png)
 
 ### Janela modal
 Contendo informações detalhadas sobre as cartas
+
 ![Janela Modal](Images/img5.png)
 
 ### Botão para alterar entre os temas escuro e claro.
 A preferência é salva no localStorage
+
 ![Tema Escuro](Images/img2.png)
 
 ### Sistema para comparação de cartas
 Sistema que permite que o usuário compare atributos de duas cartas
+
 ![sistema de comparação de cartas](Images/img3.png)
 
 ### Navegação entre páginas
 Permite que o usuário navegue pelas páginas, tendo assim acesso a todas as cartas. (São mostradas 15 cartas por página)
+
 ![navegação entre páginas](Images/img6.png)
 
 
