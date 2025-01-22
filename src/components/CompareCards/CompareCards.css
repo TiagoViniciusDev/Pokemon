@@ -92,6 +92,7 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 2em;
+        padding: 0 1em;
     }
 
     .CompareCards > .container .input:first-of-type{
@@ -110,7 +111,25 @@
 }
 
 @media screen and (max-width: 500px) {
+    .CompareCards{
+        font-size: 14px;
+    }
+    
+    .CompareCards .container .compareInfo{
+        width: 100%;
+    }
+
     .CompareCards .container .compareInfo .details{
-        gap: 0 0em;
+        gap: 0 1em;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .CompareCards{
+        font-size: 12px;
+    }   
+
+    .CompareCards .container .compareInfo .details{
+        gap: 0 0.5em;
     }
 }

@@ -19,8 +19,6 @@ function CompareCards({ inputs, onDrop, setInputs }: InputsProps){
 
     const { showCompareCards, setShowCompareCards } = useContext(PokemonTCGContext)
 
-    console.log(inputs.input2)
-
     function handleDragOver(e: React.DragEvent<HTMLDivElement>) {
         e.preventDefault();
     }

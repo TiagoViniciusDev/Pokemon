@@ -16,7 +16,7 @@ function Pagination() {
 
   useEffect(() => {
     if(data){
-      setNumberOfPages(Math.ceil(data.totalCount/20))
+      setNumberOfPages(Math.ceil(data.totalCount/15))
     }
   },[data])
 
@@ -32,8 +32,6 @@ function Pagination() {
     // Remove o listener ao desmontar o componente
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  console.log(windowSize)
 
   function nextPage(){
     if(filter.page < numberOfPages){

@@ -37,8 +37,7 @@ function App() {
       }
 
       const resultObj = await response.json()
-
-      console.log(await resultObj)  
+ 
       setData(resultObj)  
 
       setError({
@@ -131,7 +130,6 @@ function App() {
 
     const FinalQuery = `pageSize=${filter.pageSize}&page=${filter.page}${Query}`
 
-    console.log(FinalQuery)
     getAllPokemons(FinalQuery)
   },[filter])
 
@@ -146,8 +144,6 @@ function App() {
   }
 
   const [inputs, setInputs] = useState<InputsState>({ input1: null, input2: null });
-
-  console.log(inputs)
 
   function handleDrop(inputKey: keyof InputsState, option: dataInterface) {
     setInputs((prev) => ({

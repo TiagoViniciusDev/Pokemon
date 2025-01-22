@@ -51,14 +51,10 @@ h1, h2, h3, h4, p, a, span{
 }
 
 *::-webkit-scrollbar-track {
-  /* background-color: var(--scrollBarCorDeFundo); */
   background-color: transparent; /* cor de fundo da scroll bar */
 }
 
 *::-webkit-scrollbar-thumb {
-  /* background-color: var(--cor-principal); */
   background-color: gray;
   border-radius: 20px;
-  /* border: 3px solid var(--scrollBarCorDeFundo); */
-  /* border: 3px solid green; */
 }
