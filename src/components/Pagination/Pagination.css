@@ -22,7 +22,7 @@
     background-color: var(--mainColor);
 }
 
-.Pagination > .container .pages{
+.Pagination > .container .pages > div{
     display: flex;
     align-items: center;
     gap: 0.5em;

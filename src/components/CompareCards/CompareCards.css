@@ -39,6 +39,16 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
+    justify-content: center;
+}
+
+.CompareCards .container .dragInfo button{
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    background-color: var(--mainColor);
+    border: 1px solid var(--textColor);
 }
 
 .CompareCards .container .compareInfo{
@@ -75,4 +85,32 @@
 
 .details img{
     width: 2em;
+}
+
+@media screen and (max-width: 1000px) {
+    .CompareCards > .container{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2em;
+    }
+
+    .CompareCards > .container .input:first-of-type{
+        order: 2;
+    }
+
+    .CompareCards .container .dragInfo{
+        order: 1;
+        width: 100%;
+        margin-bottom: 2em;
+    }
+
+    .CompareCards > .container .input:last-of-type{
+        order: 3;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .CompareCards .container .compareInfo .details{
+        gap: 0 0em;
+    }
 }

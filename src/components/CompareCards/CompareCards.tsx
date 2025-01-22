@@ -17,7 +17,9 @@ import { PokemonTCGContext } from '../../context/PokemonTCGContext.tsx';
 
 function CompareCards({ inputs, onDrop, setInputs }: InputsProps){
 
-    const { showCompareCards } = useContext(PokemonTCGContext)
+    const { showCompareCards, setShowCompareCards } = useContext(PokemonTCGContext)
+
+    console.log(inputs.input2)
 
     function handleDragOver(e: React.DragEvent<HTMLDivElement>) {
         e.preventDefault();
@@ -32,7 +34,7 @@ function CompareCards({ inputs, onDrop, setInputs }: InputsProps){
     return(
         <section className='CompareCards' style={showCompareCards ? {display: 'block'} : {display: 'none'}}>
             <div className='container'>
-                <div className='input' key="input1" onDragOver={handleDragOver} onDrop={(e) => handleDrop(e, "input1" as keyof InputsProps['inputs'])} style={inputs.input1 ? {backgroundImage: `url(${inputs.input1.images.large})`} : {backgroundImage: "none"}} onClick={() => {
+                <div className='input' key="input1" onDragOver={handleDragOver} onDrop={(e) => handleDrop(e, "input1" as keyof InputsProps['inputs'])} style={inputs.input1 ? {backgroundImage: `url(${inputs.input1.images.large})`, cursor: 'pointer'} : {backgroundImage: "none"}} title={inputs.input1 ? "Clique para remover" : ""} onClick={() => {
                         setInputs((prev) => ({
                             ...prev,  
                             input1: null,
@@ -47,6 +49,9 @@ function CompareCards({ inputs, onDrop, setInputs }: InputsProps){
                 <div className='dragInfo' style={inputs && inputs.input1 && inputs.input2 ? {display: "none"} : {display: "flex"}}>
                     <h3>Comparar Cartas</h3>
                     <p>Arraste as cartas para os campos para que elas sejam comparadas</p>
+                    <button onClick={() => {setShowCompareCards(false)}}>
+                        <p>Fechar Janela</p>
+                    </button>
                 </div>
 
                 {inputs && inputs.input1 && inputs.input2 ? (
@@ -83,7 +88,7 @@ function CompareCards({ inputs, onDrop, setInputs }: InputsProps){
                     </div>
                 ) : ""}
 
-                <div className='input' key="input2" onDragOver={handleDragOver} onDrop={(e) => handleDrop(e, "input2" as keyof InputsProps['inputs'])} style={inputs.input2 ? {backgroundImage: `url(${inputs.input2.images.large})`} : {backgroundImage: "none"}} onClick={() => {
+                <div className='input' key="input2" onDragOver={handleDragOver} onDrop={(e) => handleDrop(e, "input2" as keyof InputsProps['inputs'])} style={inputs.input2 ? {backgroundImage: `url(${inputs.input2.images.large})`, cursor: 'pointer'} : {backgroundImage: "none"}} title={inputs.input2 ? "Clique para remover" : ""} onClick={() => {
                         setInputs((prev) => ({
                             ...prev,  
                             input2: null,

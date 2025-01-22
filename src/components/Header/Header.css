@@ -41,3 +41,9 @@
     text-decoration: none;
     user-select: none;
 }
+
+@media screen and (max-width: 400px) {
+    .Header > .container > div a{
+        display: none;
+    }
+}

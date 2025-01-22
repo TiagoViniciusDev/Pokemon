@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 4em;
+    gap: 2em;
 }
 
 .Search > .container form{
@@ -87,3 +87,27 @@
 }
 
 
+@media screen and (max-width: 1000px) {
+    .Search > .container{
+       flex-direction: column;
+
+       padding-bottom: 2em;
+       border-bottom: 1px solid var(--mainColor);
+    }
+
+    .Search > .container form{
+        width: 100%;
+    }
+
+    .Search > .container .filter{
+        width: fit-content;
+    }
+}
+
+@media screen and (max-width: 764px) {
+    .Search > .container .filter{
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 2em 1em;
+    }
+}

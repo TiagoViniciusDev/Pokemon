@@ -1,6 +1,10 @@
 import './Pagination.css'
 import { MdNavigateBefore } from "react-icons/md";
 
+import PaginationLarge from './PaginationLarge.tsx';
+import PaginationMid from './PaginationMid.tsx';
+import PaginationSmall from './PaginationSmall.tsx';
+
 //Context
 import { useContext, useState, useEffect } from 'react';
 import { PokemonTCGContext } from '../../context/PokemonTCGContext.tsx';
@@ -17,6 +21,19 @@ function Pagination() {
   },[data])
 
 
+
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowSize(window.innerWidth);
+
+    window.addEventListener('resize', handleResize);
+
+    // Remove o listener ao desmontar o componente
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  console.log(windowSize)
 
   function nextPage(){
     if(filter.page < numberOfPages){
@@ -52,30 +69,14 @@ function Pagination() {
             </div>
 
             <div className='pages'>
-              {/* Páginas anterioriores */}
-              {filter.page > 4 ? ( 
-                <>  
-                    <div className='pageNumber'onClick={() => {goToPage(1)}}><p>1</p></div>
-                    <div className='pageNumber interval'><p>...</p></div>
-                </>
-                ) : "" }
-              {filter.page > 2 ? (<div className='pageNumber' onClick={() => {goToPage(filter.page - 2)}}><p>{filter.page - 2}</p></div>) : ""}
-              {filter.page > 1 ? (<div className='pageNumber' onClick={() => {goToPage(filter.page - 1)}}><p>{filter.page - 1}</p></div>) : ""}
 
-              <div className='pageNumber current'><p>{filter.page}</p></div> {/* Página atual */}
-
-              {/* Ultimas páginas */}
-              {filter.page < numberOfPages ? (<div className='pageNumber' onClick={() => {goToPage(filter.page + 1)}}><p>{filter.page + 1}</p></div>) : ""}
-              {filter.page < numberOfPages - 1 ? (<div className='pageNumber' onClick={() => {goToPage(filter.page + 2)}}><p>{filter.page + 2}</p></div>) : ""}
-              {filter.page > 4 || numberOfPages < 4 ? "" : (<div className='pageNumber' onClick={() => {goToPage(filter.page + 3)}}><p>{filter.page + 3}</p></div>)}
-              {filter.page > 1 || numberOfPages < 5 ? "" : (<div className='pageNumber' onClick={() => {goToPage(filter.page + 4)}}><p>{filter.page + 4}</p></div>)}
-
-              {filter.page < numberOfPages - 2 ? ( 
-                <>  
-                    <div className='pageNumber interval'><p>...</p></div>
-                    <div className='pageNumber'onClick={() => {goToPage(numberOfPages)}}><p>{numberOfPages}</p></div> 
-                </>
-                ) : "" }
+              {windowSize > 764 ? 
+                <PaginationLarge page={filter.page} numberOfPages={numberOfPages} goToPage={goToPage}/> 
+                : windowSize > 500 ? 
+                <PaginationMid page={filter.page} numberOfPages={numberOfPages} goToPage={goToPage}/> : 
+                <PaginationSmall page={filter.page} numberOfPages={numberOfPages} goToPage={goToPage}/>
+              }
+              
             </div>
 
             <div className='btn' onClick={nextPage} style={filter.page >= numberOfPages ? {color: "var(--mainColor)"} : {}}>

@@ -18,5 +18,28 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 1em;
     position: relative;
-    min-height: 20em;
+}
+
+@media screen and (max-width: 1280px) {
+    .Results > .container .searchResults{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .Results > .container .searchResults{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .Results > .container .searchResults{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .Results > .container .searchResults{
+        grid-template-columns: 1fr;
+    }
 }

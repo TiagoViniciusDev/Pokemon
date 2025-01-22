@@ -47,6 +47,7 @@
 
 .Modal .modalContent > img{
     height: 100%;
+    max-height: 825px;
 }
 
 .Modal .modalContent .info{
