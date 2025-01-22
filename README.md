@@ -1,4 +1,4 @@
-O Projeto foi feito com React.tsx consumindo a api do [PokemonTCG](https://docs.pokemontcg.io/api-reference/cards/search-cards/) 
+O Projeto foi feito com React.js (tsx) consumindo a api do [PokemonTCG](https://docs.pokemontcg.io/api-reference/cards/search-cards/) 
 
 ![Preview](Images/img1.png)
 
