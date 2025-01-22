@@ -1,5 +1,5 @@
 
-function PaginationLarge({page, numberOfPages, goToPage}){
+function PaginationLarge({page, numberOfPages, goToPage} : {page: number; numberOfPages: number; goToPage: (pageNumber: number) => void;}){
     return(
         <div>
             {/* Páginas anterioriores */}
