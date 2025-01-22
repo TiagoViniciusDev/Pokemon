@@ -14,18 +14,6 @@
     top: -1em;
 }
 
-@keyframes selectedCart{
-    0%{
-        top: 0;
-        
-    }
-
-    100%{
-        top: -1em;
-        background-color: red;
-    }
-}
-
 .PokemonContainer img{
     width: 100%;
     border-radius: 12px 12px 0 0;
@@ -55,4 +43,10 @@
 
 .PokemonContainer .info > div img{
     width: 2em;
+}
+
+@media screen and (max-width: 764px){
+    .PokemonContainer:hover{
+        top: 0;
+    }
 }

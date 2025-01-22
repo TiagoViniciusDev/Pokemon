@@ -33,8 +33,7 @@
     border: 1px solid black;
     border-radius: 0.3em;
     cursor: pointer;
-    padding: 0.2em;
-    
+    padding: 0.2em;    
 }
 
 .Modal .modalContent .close svg{
@@ -71,7 +70,7 @@
     border-bottom: 1px solid var(--textColor);
 }
 
-.Modal .modalContent .info header div:nth-of-type(2){
+.Modal .modalContent .info header > div:nth-of-type(2){
     display: flex;
     gap: 2em;
     align-items: center;
@@ -176,4 +175,44 @@
     font-weight: 600;
     margin-bottom: 0.5em;
     display: block;
+}
+
+@media screen and (max-width: 1000px) {
+    .Modal .modalContent{
+        width: 95%;
+        height: 95%;
+        padding: 1em;
+    }
+
+    .Modal .modalContent .info .attributes{
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 764px) {
+    .Modal .modalContent{
+        width: 95%;
+        height: 95%;
+        flex-direction: column;
+        padding: 1em;
+        overflow-y: scroll;
+        align-items: center;
+    }
+
+    .Modal .modalContent > img{
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+    } 
+
+    .Modal .modalContent .info{
+       overflow-y: visible;
+       padding: 0;
+    }
+
+    .Modal .modalContent .close{
+        position: absolute;
+        top: 1em;
+        right: 1em;
+    }
 }

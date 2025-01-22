@@ -109,5 +109,21 @@
         flex-wrap: wrap;
         justify-content: center;
         padding: 2em 1em;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .Search > .container .filter{
+        flex-direction: column;
+    }
+
+    .Search > .container .filter .selectFilter{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .Search > .container .filter .selectFilter select{
+        width: 100%;
     }
 }
