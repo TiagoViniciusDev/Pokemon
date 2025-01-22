@@ -46,12 +46,17 @@ function App() {
       })
       setLoading(false)
     } catch (error) {
-      setError({
-        value: true,
-        message: error.message
-      })
+      if (error instanceof Error) {
+        console.error(error.message);
+        setError({
+          value: true,
+          message: error.message
+        })
+      } else {
+        console.error("Erro desconhecido", error);
+      }
+
       setLoading(false)
-      console.log(error)
     }
   }
 
@@ -75,10 +80,16 @@ function App() {
 
       setTypes(resultObj.data)
     } catch (error) {
-      setError({
-        value: true,
-        message: error.message
-      })
+      if (error instanceof Error) {
+        console.error(error.message)
+        setError({
+          value: true,
+          message: error.message
+        })
+      } else {
+        console.error("Erro desconhecido", error);
+      }
+
     }
   }
 
@@ -102,10 +113,15 @@ function App() {
 
       setRarities(resultObj.data)
     } catch (error) {
-      setError({
-        value: true,
-        message: error.message
-      })
+      if (error instanceof Error) {
+        console.error(error.message)
+        setError({
+          value: true,
+          message: error.message
+        })
+      } else {
+        console.error("Erro desconhecido", error);
+      }
     }
   }
 
