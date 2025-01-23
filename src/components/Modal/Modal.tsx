@@ -113,8 +113,8 @@ function Modal(){
                                 {modalData.tcgplayer ? (
                                     <div className='market'>
                                         <a href={modalData.tcgplayer.url} target='_blank' title='Clique para visitar'>Tcgplayer</a>
-                                        {modalData.tcgplayer.prices.holofoil ? (<p>Preço: ${modalData.tcgplayer.prices.holofoil.market}</p>) : <p>N/A</p>}
-                                        {modalData.tcgplayer.prices.holofoil ? (<p>Preço medio: ${modalData.tcgplayer.prices.holofoil.mid}</p>) : <p>N/A</p>}
+                                        {modalData.tcgplayer.prices && modalData.tcgplayer.prices.holofoil ? (<p>Preço: ${modalData.tcgplayer.prices.holofoil.market}</p>) : <p>N/A</p>}
+                                        {modalData.tcgplayer.prices && modalData.tcgplayer.prices.holofoil ? (<p>Preço medio: ${modalData.tcgplayer.prices.holofoil.mid}</p>) : <p>N/A</p>}
                                     </div>  
                                 ) : <p>N/A</p>}
                             </div>

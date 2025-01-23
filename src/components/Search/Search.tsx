@@ -1,4 +1,4 @@
-import { FormEvent } from 'react';
+import { FormEvent, useEffect } from 'react';
 
 import './Search.css'
 import { CiSearch } from "react-icons/ci";
@@ -34,6 +34,25 @@ function Search() {
       }))
   }
 
+    //Verificando se é ou não um dispositivo com toque (PC ou mobile)
+    const [touchDevice, setTouchDevice] = useState(false)
+
+    useEffect(() => {
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+        if (isTouchDevice) {
+            setTouchDevice(true)
+        } else {
+            setTouchDevice(false)
+        }
+    },[])
+
+    function toggleShowCompareCards(){
+        if(!touchDevice){ //Se o dispositivo se de toque não mostra a janela de comparação de cartas
+            setShowCompareCards(!showCompareCards)
+        }
+    }
+
   return (
     <section className='Search'>
         <div className='container'>
@@ -45,7 +64,7 @@ function Search() {
             </form>
 
             <div className='filter'>
-                <div className='compare' onClick={() => {setShowCompareCards(!showCompareCards)}}>
+                <div className='compare' onClick={toggleShowCompareCards} style={touchDevice ? {display: 'none'} : {display: "flex"}}>
                     <p>Comparar cartas</p>
                 </div>
 

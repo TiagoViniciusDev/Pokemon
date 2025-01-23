@@ -55,7 +55,7 @@ function App() {
       } else {
         console.error("Erro desconhecido", error);
       }
-
+      
       setLoading(false)
     }
   }
@@ -81,7 +81,7 @@ function App() {
       setTypes(resultObj.data)
     } catch (error) {
       if (error instanceof Error) {
-        console.error(error.message)
+        console.error(error.message);
         setError({
           value: true,
           message: error.message
@@ -89,7 +89,6 @@ function App() {
       } else {
         console.error("Erro desconhecido", error);
       }
-
     }
   }
 
@@ -114,7 +113,7 @@ function App() {
       setRarities(resultObj.data)
     } catch (error) {
       if (error instanceof Error) {
-        console.error(error.message)
+        console.error(error.message);
         setError({
           value: true,
           message: error.message
